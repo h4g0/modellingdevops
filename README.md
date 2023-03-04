@@ -1,3 +1,3 @@
 # modellingdevops
 
-#### creating a domain agnostic appraoch to model devops
+#### creating a domain agnostic approach to model devops
