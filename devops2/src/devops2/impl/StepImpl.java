@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link devops2.impl.StepImpl#getArtifact <em>Artifact</em>}</li>
  *   <li>{@link devops2.impl.StepImpl#getTool_framework <em>Tool framework</em>}</li>
  *   <li>{@link devops2.impl.StepImpl#getNamestep <em>Namestep</em>}</li>
+ *   <li>{@link devops2.impl.StepImpl#getDepends <em>Depends</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +103,16 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * @ordered
 	 */
 	protected String namestep = NAMESTEP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDepends() <em>Depends</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDepends()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Step> depends;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +207,18 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Step> getDepends() {
+		if (depends == null) {
+			depends = new EObjectResolvingEList<Step>(Step.class, this, Devops2Package.STEP__DEPENDS);
+		}
+		return depends;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -223,6 +246,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 				return getTool_framework();
 			case Devops2Package.STEP__NAMESTEP:
 				return getNamestep();
+			case Devops2Package.STEP__DEPENDS:
+				return getDepends();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,6 +280,10 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			case Devops2Package.STEP__NAMESTEP:
 				setNamestep((String)newValue);
 				return;
+			case Devops2Package.STEP__DEPENDS:
+				getDepends().clear();
+				getDepends().addAll((Collection<? extends Step>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -282,6 +311,9 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			case Devops2Package.STEP__NAMESTEP:
 				setNamestep(NAMESTEP_EDEFAULT);
 				return;
+			case Devops2Package.STEP__DEPENDS:
+				getDepends().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,6 +336,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 				return tool_framework != null && !tool_framework.isEmpty();
 			case Devops2Package.STEP__NAMESTEP:
 				return NAMESTEP_EDEFAULT == null ? namestep != null : !NAMESTEP_EDEFAULT.equals(namestep);
+			case Devops2Package.STEP__DEPENDS:
+				return depends != null && !depends.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

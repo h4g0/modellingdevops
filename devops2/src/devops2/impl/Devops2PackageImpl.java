@@ -236,6 +236,15 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJob_Uses() {
+		return (EReference)jobEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStep() {
 		return stepEClass;
 	}
@@ -283,6 +292,15 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 */
 	public EAttribute getStep_Namestep() {
 		return (EAttribute)stepEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStep_Depends() {
+		return (EReference)stepEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -371,8 +389,17 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWhen_Timer() {
+	public EAttribute getWhen_Name_when() {
 		return (EAttribute)whenEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWhen_Timer() {
+		return (EAttribute)whenEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -483,6 +510,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		jobEClass = createEClass(JOB);
 		createEReference(jobEClass, JOB__STEP);
 		createEAttribute(jobEClass, JOB__NAMEJOB);
+		createEReference(jobEClass, JOB__USES);
 
 		stepEClass = createEClass(STEP);
 		createEReference(stepEClass, STEP__COMMAND);
@@ -490,6 +518,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		createEReference(stepEClass, STEP__ARTIFACT);
 		createEReference(stepEClass, STEP__TOOL_FRAMEWORK);
 		createEAttribute(stepEClass, STEP__NAMESTEP);
+		createEReference(stepEClass, STEP__DEPENDS);
 
 		commandEClass = createEClass(COMMAND);
 		createEReference(commandEClass, COMMAND__COMMAND_PARAMETER);
@@ -502,8 +531,9 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		createEAttribute(parameterEClass, PARAMETER__VALUE);
 
 		whenEClass = createEClass(WHEN);
-		createEAttribute(whenEClass, WHEN__TIMER);
+		createEAttribute(whenEClass, WHEN__NAME_WHEN);
 		createEAttribute(whenEClass, WHEN__TRIGGER);
+		createEAttribute(whenEClass, WHEN__TIMER);
 
 		artifactEClass = createEClass(ARTIFACT);
 		createEAttribute(artifactEClass, ARTIFACT__NAMEARTIFACT);
@@ -546,11 +576,8 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		buildEClass.getESuperTypes().add(this.getCommand());
 		buildEClass.getESuperTypes().add(this.getJob());
-		testEClass.getESuperTypes().add(this.getCommand());
 		testEClass.getESuperTypes().add(this.getJob());
-		deployEClass.getESuperTypes().add(this.getCommand());
 		deployEClass.getESuperTypes().add(this.getJob());
 
 		// Initialize classes, features, and operations; add parameters
@@ -562,6 +589,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getJob_Step(), this.getStep(), null, "step", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_Namejob(), ecorePackage.getEString(), "Namejob", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Uses(), this.getJob(), null, "uses", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStep_Command(), this.getCommand(), null, "command", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -569,9 +597,10 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		initEReference(getStep_Artifact(), this.getArtifact(), null, "artifact", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStep_Tool_framework(), this.getTool_framework(), null, "tool_framework", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStep_Namestep(), ecorePackage.getEString(), "Namestep", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStep_Depends(), this.getStep(), null, "depends", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommand_Command_parameter(), this.getParameter(), null, "command_parameter", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommand_Command_parameter(), this.getParameter(), null, "command_parameter", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommand_Input(), ecorePackage.getEString(), "input", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommand_Parameters(), ecorePackage.getEString(), "parameters", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommand_Namecommand(), ecorePackage.getEString(), "Namecommand", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -581,8 +610,9 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		initEAttribute(getParameter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whenEClass, When.class, "When", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWhen_Timer(), ecorePackage.getEString(), "timer", null, 0, 1, When.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWhen_Name_when(), ecorePackage.getEString(), "name_when", null, 0, 1, When.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getWhen_Trigger(), ecorePackage.getEString(), "trigger", null, 0, 1, When.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getWhen_Timer(), ecorePackage.getEString(), "timer", null, 0, 1, When.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getArtifact_Nameartifact(), ecorePackage.getEString(), "Nameartifact", null, 0, 1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

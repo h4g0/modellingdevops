@@ -141,13 +141,22 @@ public interface Devops2Package extends EPackage {
 	int JOB__NAMEJOB = 1;
 
 	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__USES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = 2;
+	int JOB_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Job</em>' class.
@@ -215,13 +224,22 @@ public interface Devops2Package extends EPackage {
 	int STEP__NAMESTEP = 4;
 
 	/**
+	 * The feature id for the '<em><b>Depends</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__DEPENDS = 5;
+
+	/**
 	 * The number of structural features of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = 5;
+	int STEP_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Step</em>' class.
@@ -243,7 +261,7 @@ public interface Devops2Package extends EPackage {
 	int COMMAND = 3;
 
 	/**
-	 * The feature id for the '<em><b>Command parameter</b></em>' reference.
+	 * The feature id for the '<em><b>Command parameter</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -354,13 +372,13 @@ public interface Devops2Package extends EPackage {
 	int WHEN = 5;
 
 	/**
-	 * The feature id for the '<em><b>Timer</b></em>' attribute.
+	 * The feature id for the '<em><b>Name when</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHEN__TIMER = 0;
+	int WHEN__NAME_WHEN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Trigger</b></em>' attribute.
@@ -372,13 +390,22 @@ public interface Devops2Package extends EPackage {
 	int WHEN__TRIGGER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Timer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEN__TIMER = 2;
+
+	/**
 	 * The number of structural features of the '<em>When</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHEN_FEATURE_COUNT = 2;
+	int WHEN_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>When</em>' class.
@@ -494,49 +521,13 @@ public interface Devops2Package extends EPackage {
 	int TOOL_FRAMEWORK_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Command parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__COMMAND_PARAMETER = COMMAND__COMMAND_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__INPUT = COMMAND__INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__PARAMETERS = COMMAND__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Namecommand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__NAMECOMMAND = COMMAND__NAMECOMMAND;
-
-	/**
 	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD__STEP = COMMAND_FEATURE_COUNT + 0;
+	int BUILD__STEP = JOB__STEP;
 
 	/**
 	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
@@ -545,7 +536,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD__NAMEJOB = COMMAND_FEATURE_COUNT + 1;
+	int BUILD__NAMEJOB = JOB__NAMEJOB;
+
+	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUILD__USES = JOB__USES;
 
 	/**
 	 * The number of structural features of the '<em>Build</em>' class.
@@ -554,7 +554,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+	int BUILD_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Build</em>' class.
@@ -563,43 +563,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUILD_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Command parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__COMMAND_PARAMETER = COMMAND__COMMAND_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__INPUT = COMMAND__INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__PARAMETERS = COMMAND__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Namecommand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__NAMECOMMAND = COMMAND__NAMECOMMAND;
+	int BUILD_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
@@ -608,7 +572,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__STEP = COMMAND_FEATURE_COUNT + 0;
+	int TEST__STEP = JOB__STEP;
 
 	/**
 	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
@@ -617,7 +581,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__NAMEJOB = COMMAND_FEATURE_COUNT + 1;
+	int TEST__NAMEJOB = JOB__NAMEJOB;
+
+	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST__USES = JOB__USES;
 
 	/**
 	 * The number of structural features of the '<em>Test</em>' class.
@@ -626,7 +599,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+	int TEST_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Test</em>' class.
@@ -635,43 +608,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Command parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__COMMAND_PARAMETER = COMMAND__COMMAND_PARAMETER;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__INPUT = COMMAND__INPUT;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__PARAMETERS = COMMAND__PARAMETERS;
-
-	/**
-	 * The feature id for the '<em><b>Namecommand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__NAMECOMMAND = COMMAND__NAMECOMMAND;
+	int TEST_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
@@ -680,7 +617,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY__STEP = COMMAND_FEATURE_COUNT + 0;
+	int DEPLOY__STEP = JOB__STEP;
 
 	/**
 	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
@@ -689,7 +626,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY__NAMEJOB = COMMAND_FEATURE_COUNT + 1;
+	int DEPLOY__NAMEJOB = JOB__NAMEJOB;
+
+	/**
+	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPLOY__USES = JOB__USES;
 
 	/**
 	 * The number of structural features of the '<em>Deploy</em>' class.
@@ -698,7 +644,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 2;
+	int DEPLOY_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Deploy</em>' class.
@@ -707,7 +653,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
+	int DEPLOY_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
 
 
 	/**
@@ -786,6 +732,17 @@ public interface Devops2Package extends EPackage {
 	EAttribute getJob_Namejob();
 
 	/**
+	 * Returns the meta object for the reference list '{@link devops2.Job#getUses <em>Uses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Uses</em>'.
+	 * @see devops2.Job#getUses()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_Uses();
+
+	/**
 	 * Returns the meta object for class '{@link devops2.Step <em>Step</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -851,6 +808,17 @@ public interface Devops2Package extends EPackage {
 	EAttribute getStep_Namestep();
 
 	/**
+	 * Returns the meta object for the reference list '{@link devops2.Step#getDepends <em>Depends</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Depends</em>'.
+	 * @see devops2.Step#getDepends()
+	 * @see #getStep()
+	 * @generated
+	 */
+	EReference getStep_Depends();
+
+	/**
 	 * Returns the meta object for class '{@link devops2.Command <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -861,10 +829,10 @@ public interface Devops2Package extends EPackage {
 	EClass getCommand();
 
 	/**
-	 * Returns the meta object for the reference '{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Command parameter</em>'.
+	 * @return the meta object for the reference list '<em>Command parameter</em>'.
 	 * @see devops2.Command#getCommand_parameter()
 	 * @see #getCommand()
 	 * @generated
@@ -945,6 +913,17 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getWhen();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.When#getName_when <em>Name when</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name when</em>'.
+	 * @see devops2.When#getName_when()
+	 * @see #getWhen()
+	 * @generated
+	 */
+	EAttribute getWhen_Name_when();
 
 	/**
 	 * Returns the meta object for the attribute '{@link devops2.When#getTimer <em>Timer</em>}'.
@@ -1117,6 +1096,13 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute JOB__NAMEJOB = eINSTANCE.getJob_Namejob();
 		/**
+		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__USES = eINSTANCE.getJob_Uses();
+		/**
 		 * The meta object literal for the '{@link devops2.impl.StepImpl <em>Step</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1161,6 +1147,13 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute STEP__NAMESTEP = eINSTANCE.getStep_Namestep();
 		/**
+		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STEP__DEPENDS = eINSTANCE.getStep_Depends();
+		/**
 		 * The meta object literal for the '{@link devops2.impl.CommandImpl <em>Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1170,7 +1163,7 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass COMMAND = eINSTANCE.getCommand();
 		/**
-		 * The meta object literal for the '<em><b>Command parameter</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Command parameter</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1229,6 +1222,13 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EClass WHEN = eINSTANCE.getWhen();
+		/**
+		 * The meta object literal for the '<em><b>Name when</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WHEN__NAME_WHEN = eINSTANCE.getWhen_Name_when();
 		/**
 		 * The meta object literal for the '<em><b>Timer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->

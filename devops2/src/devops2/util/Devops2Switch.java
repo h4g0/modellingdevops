@@ -117,7 +117,6 @@ public class Devops2Switch<T> extends Switch<T> {
 			case Devops2Package.BUILD: {
 				Build build = (Build)theEObject;
 				T result = caseBuild(build);
-				if (result == null) result = caseCommand(build);
 				if (result == null) result = caseJob(build);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -125,7 +124,6 @@ public class Devops2Switch<T> extends Switch<T> {
 			case Devops2Package.TEST: {
 				Test test = (Test)theEObject;
 				T result = caseTest(test);
-				if (result == null) result = caseCommand(test);
 				if (result == null) result = caseJob(test);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -133,7 +131,6 @@ public class Devops2Switch<T> extends Switch<T> {
 			case Devops2Package.DEPLOY: {
 				Deploy deploy = (Deploy)theEObject;
 				T result = caseDeploy(deploy);
-				if (result == null) result = caseCommand(deploy);
 				if (result == null) result = caseJob(deploy);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

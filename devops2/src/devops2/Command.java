@@ -2,6 +2,7 @@
  */
 package devops2;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -25,26 +26,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Command extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Command parameter</b></em>' reference.
+	 * Returns the value of the '<em><b>Command parameter</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Command parameter</em>' reference.
-	 * @see #setCommand_parameter(Parameter)
+	 * @return the value of the '<em>Command parameter</em>' reference list.
 	 * @see devops2.Devops2Package#getCommand_Command_parameter()
 	 * @model
 	 * @generated
 	 */
-	Parameter getCommand_parameter();
-
-	/**
-	 * Sets the value of the '{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Command parameter</em>' reference.
-	 * @see #getCommand_parameter()
-	 * @generated
-	 */
-	void setCommand_parameter(Parameter value);
+	EList<Parameter> getCommand_parameter();
 
 	/**
 	 * Returns the value of the '<em><b>Input</b></em>' attribute.

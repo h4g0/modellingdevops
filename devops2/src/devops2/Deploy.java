@@ -13,5 +13,5 @@ package devops2;
  * @model
  * @generated
  */
-public interface Deploy extends Command, Job {
+public interface Deploy extends Job {
 } // Deploy

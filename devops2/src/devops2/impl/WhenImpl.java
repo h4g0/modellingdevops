@@ -19,31 +19,32 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link devops2.impl.WhenImpl#getTimer <em>Timer</em>}</li>
+ *   <li>{@link devops2.impl.WhenImpl#getName_when <em>Name when</em>}</li>
  *   <li>{@link devops2.impl.WhenImpl#getTrigger <em>Trigger</em>}</li>
+ *   <li>{@link devops2.impl.WhenImpl#getTimer <em>Timer</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	/**
-	 * The default value of the '{@link #getTimer() <em>Timer</em>}' attribute.
+	 * The default value of the '{@link #getName_when() <em>Name when</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimer()
+	 * @see #getName_when()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TIMER_EDEFAULT = null;
+	protected static final String NAME_WHEN_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getTimer() <em>Timer</em>}' attribute.
+	 * The cached value of the '{@link #getName_when() <em>Name when</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimer()
+	 * @see #getName_when()
 	 * @generated
 	 * @ordered
 	 */
-	protected String timer = TIMER_EDEFAULT;
+	protected String name_when = NAME_WHEN_EDEFAULT;
 	/**
 	 * The default value of the '{@link #getTrigger() <em>Trigger</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,6 +63,24 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	 * @ordered
 	 */
 	protected String trigger = TRIGGER_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getTimer() <em>Timer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimer()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TIMER_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTimer() <em>Timer</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimer()
+	 * @generated
+	 * @ordered
+	 */
+	protected String timer = TIMER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +99,27 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	@Override
 	protected EClass eStaticClass() {
 		return Devops2Package.Literals.WHEN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName_when() {
+		return name_when;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName_when(String newName_when) {
+		String oldName_when = name_when;
+		name_when = newName_when;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.WHEN__NAME_WHEN, oldName_when, name_when));
 	}
 
 	/**
@@ -132,10 +172,12 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Devops2Package.WHEN__TIMER:
-				return getTimer();
+			case Devops2Package.WHEN__NAME_WHEN:
+				return getName_when();
 			case Devops2Package.WHEN__TRIGGER:
 				return getTrigger();
+			case Devops2Package.WHEN__TIMER:
+				return getTimer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,11 +190,14 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Devops2Package.WHEN__TIMER:
-				setTimer((String)newValue);
+			case Devops2Package.WHEN__NAME_WHEN:
+				setName_when((String)newValue);
 				return;
 			case Devops2Package.WHEN__TRIGGER:
 				setTrigger((String)newValue);
+				return;
+			case Devops2Package.WHEN__TIMER:
+				setTimer((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -166,11 +211,14 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Devops2Package.WHEN__TIMER:
-				setTimer(TIMER_EDEFAULT);
+			case Devops2Package.WHEN__NAME_WHEN:
+				setName_when(NAME_WHEN_EDEFAULT);
 				return;
 			case Devops2Package.WHEN__TRIGGER:
 				setTrigger(TRIGGER_EDEFAULT);
+				return;
+			case Devops2Package.WHEN__TIMER:
+				setTimer(TIMER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -184,10 +232,12 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Devops2Package.WHEN__TIMER:
-				return TIMER_EDEFAULT == null ? timer != null : !TIMER_EDEFAULT.equals(timer);
+			case Devops2Package.WHEN__NAME_WHEN:
+				return NAME_WHEN_EDEFAULT == null ? name_when != null : !NAME_WHEN_EDEFAULT.equals(name_when);
 			case Devops2Package.WHEN__TRIGGER:
 				return TRIGGER_EDEFAULT == null ? trigger != null : !TRIGGER_EDEFAULT.equals(trigger);
+			case Devops2Package.WHEN__TIMER:
+				return TIMER_EDEFAULT == null ? timer != null : !TIMER_EDEFAULT.equals(timer);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -202,10 +252,12 @@ public class WhenImpl extends MinimalEObjectImpl.Container implements When {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (timer: ");
-		result.append(timer);
+		result.append(" (name_when: ");
+		result.append(name_when);
 		result.append(", trigger: ");
 		result.append(trigger);
+		result.append(", timer: ");
+		result.append(timer);
 		result.append(')');
 		return result.toString();
 	}

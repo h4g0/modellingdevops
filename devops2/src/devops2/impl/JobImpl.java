@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link devops2.impl.JobImpl#getStep <em>Step</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getNamejob <em>Namejob</em>}</li>
+ *   <li>{@link devops2.impl.JobImpl#getUses <em>Uses</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +63,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected String namejob = NAMEJOB_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Job> uses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,6 +131,18 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Job> getUses() {
+		if (uses == null) {
+			uses = new EObjectResolvingEList<Job>(Job.class, this, Devops2Package.JOB__USES);
+		}
+		return uses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -140,6 +164,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return getStep();
 			case Devops2Package.JOB__NAMEJOB:
 				return getNamejob();
+			case Devops2Package.JOB__USES:
+				return getUses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -160,6 +186,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case Devops2Package.JOB__NAMEJOB:
 				setNamejob((String)newValue);
 				return;
+			case Devops2Package.JOB__USES:
+				getUses().clear();
+				getUses().addAll((Collection<? extends Job>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -178,6 +208,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case Devops2Package.JOB__NAMEJOB:
 				setNamejob(NAMEJOB_EDEFAULT);
 				return;
+			case Devops2Package.JOB__USES:
+				getUses().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,6 +227,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return step != null && !step.isEmpty();
 			case Devops2Package.JOB__NAMEJOB:
 				return NAMEJOB_EDEFAULT == null ? namejob != null : !NAMEJOB_EDEFAULT.equals(namejob);
+			case Devops2Package.JOB__USES:
+				return uses != null && !uses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

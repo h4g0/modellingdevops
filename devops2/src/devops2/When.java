@@ -13,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link devops2.When#getTimer <em>Timer</em>}</li>
+ *   <li>{@link devops2.When#getName_when <em>Name when</em>}</li>
  *   <li>{@link devops2.When#getTrigger <em>Trigger</em>}</li>
+ *   <li>{@link devops2.When#getTimer <em>Timer</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getWhen()
@@ -22,6 +23,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface When extends EObject {
+
+	/**
+	 * Returns the value of the '<em><b>Name when</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name when</em>' attribute.
+	 * @see #setName_when(String)
+	 * @see devops2.Devops2Package#getWhen_Name_when()
+	 * @model id="true"
+	 * @generated
+	 */
+	String getName_when();
+
+	/**
+	 * Sets the value of the '{@link devops2.When#getName_when <em>Name when</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name when</em>' attribute.
+	 * @see #getName_when()
+	 * @generated
+	 */
+	void setName_when(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Timer</b></em>' attribute.

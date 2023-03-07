@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<devops2:Pipeline xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:devops2="http://www.example.org/devops2" Namepipeline="GitLab example">
+  <when name_when="Push" trigger="Push" timer="None"/>
+  <job Namejob="Install">
+    <step Namestep="Install">
+      <command input="yarn" parameters="install" Namecommand="Install"/>
+      <artifact href="Codebase.devops2#/"/>
+      <tool_framework href="Ubuntu.devops2#/"/>
+      <tool_framework href="Nodev10.x.devops2#/"/>
+    </step>
+  </job>
+  <job xsi:type="devops2:Test" Namejob="Test" uses="//@job.0">
+    <step Namestep="Test">
+      <command input="yarn" parameters="test" Namecommand="Test">
+        <command_parameter href="CI.devops2#/"/>
+      </command>
+      <artifact href="Codebase.devops2#/"/>
+      <tool_framework href="Ubuntu.devops2#/"/>
+      <tool_framework href="Nodev10.x.devops2#/"/>
+    </step>
+  </job>
+  <job xsi:type="devops2:Build" Namejob="Build" uses="//@job.1 //@job.0 //@job.2">
+    <step Namestep="Build">
+      <command input="yarn" parameters="run build --if-present" Namecommand="Build"/>
+      <artifact href="Codebase.devops2#/"/>
+      <tool_framework href="Ubuntu.devops2#/"/>
+      <tool_framework href="Nodev10.x.devops2#/"/>
+    </step>
+  </job>
+  <job xsi:type="devops2:Deploy" Namejob="Deploy" uses="//@job.2 //@job.1 //@job.0 //@job.3">
+    <step Namestep="Add remote">
+      <command input="git" parameters="remote add heroku https://heroku:${{HEROKU_API_KEY }}@git.heroku.com/${{HEROKU_APP_NAME }}.git" Namecommand="add remote">
+        <command_parameter href="HerokuName.devops2#/"/>
+        <command_parameter href="HerokuKey.devops2#/"/>
+      </command>
+      <artifact href="Codebase.devops2#/"/>
+    </step>
+    <step Namestep="Push" depends="//@job.3/@step.0">
+      <command input="git" parameters="push heroku HEAD:master -f" Namecommand="Push"/>
+      <artifact href="Codebase.devops2#/"/>
+    </step>
+  </job>
+</devops2:Pipeline>

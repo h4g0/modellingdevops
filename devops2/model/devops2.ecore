@@ -12,6 +12,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Namejob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Job"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step">
     <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
@@ -23,9 +24,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tool_framework" upperBound="-1"
         eType="#//Tool_framework"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Namestep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depends" upperBound="-1"
+        eType="#//Step"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="command_parameter" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command_parameter" upperBound="-1"
+        eType="#//Parameter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Namecommand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -36,8 +40,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="When">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name_when" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nameartifact" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -45,7 +51,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Tool_framework">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nametool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Build" eSuperTypes="#//Command #//Job"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Test" eSuperTypes="#//Command #//Job"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Deploy" eSuperTypes="#//Command #//Job"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Build" eSuperTypes="#//Job"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Test" eSuperTypes="#//Job"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Deploy" eSuperTypes="#//Job"/>
 </ecore:EPackage>

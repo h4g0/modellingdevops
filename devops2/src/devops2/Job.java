@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link devops2.Job#getStep <em>Step</em>}</li>
  *   <li>{@link devops2.Job#getNamejob <em>Namejob</em>}</li>
+ *   <li>{@link devops2.Job#getUses <em>Uses</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getJob()
@@ -57,4 +58,16 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setNamejob(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Job}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Uses</em>' reference list.
+	 * @see devops2.Devops2Package#getJob_Uses()
+	 * @model
+	 * @generated
+	 */
+	EList<Job> getUses();
 } // Job

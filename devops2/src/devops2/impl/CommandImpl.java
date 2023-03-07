@@ -6,13 +6,14 @@ import devops2.Command;
 import devops2.Devops2Package;
 import devops2.Parameter;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class CommandImpl extends MinimalEObjectImpl.Container implements Command {
 	/**
-	 * The cached value of the '{@link #getCommand_parameter() <em>Command parameter</em>}' reference.
+	 * The cached value of the '{@link #getCommand_parameter() <em>Command parameter</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCommand_parameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected Parameter command_parameter;
+	protected EList<Parameter> command_parameter;
 
 	/**
 	 * The default value of the '{@link #getInput() <em>Input</em>}' attribute.
@@ -122,37 +123,11 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Parameter getCommand_parameter() {
-		if (command_parameter != null && command_parameter.eIsProxy()) {
-			InternalEObject oldCommand_parameter = (InternalEObject)command_parameter;
-			command_parameter = (Parameter)eResolveProxy(oldCommand_parameter);
-			if (command_parameter != oldCommand_parameter) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Devops2Package.COMMAND__COMMAND_PARAMETER, oldCommand_parameter, command_parameter));
-			}
+	public EList<Parameter> getCommand_parameter() {
+		if (command_parameter == null) {
+			command_parameter = new EObjectResolvingEList<Parameter>(Parameter.class, this, Devops2Package.COMMAND__COMMAND_PARAMETER);
 		}
 		return command_parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Parameter basicGetCommand_parameter() {
-		return command_parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCommand_parameter(Parameter newCommand_parameter) {
-		Parameter oldCommand_parameter = command_parameter;
-		command_parameter = newCommand_parameter;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.COMMAND__COMMAND_PARAMETER, oldCommand_parameter, command_parameter));
 	}
 
 	/**
@@ -227,8 +202,7 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				if (resolve) return getCommand_parameter();
-				return basicGetCommand_parameter();
+				return getCommand_parameter();
 			case Devops2Package.COMMAND__INPUT:
 				return getInput();
 			case Devops2Package.COMMAND__PARAMETERS:
@@ -244,11 +218,13 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				setCommand_parameter((Parameter)newValue);
+				getCommand_parameter().clear();
+				getCommand_parameter().addAll((Collection<? extends Parameter>)newValue);
 				return;
 			case Devops2Package.COMMAND__INPUT:
 				setInput((String)newValue);
@@ -272,7 +248,7 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				setCommand_parameter((Parameter)null);
+				getCommand_parameter().clear();
 				return;
 			case Devops2Package.COMMAND__INPUT:
 				setInput(INPUT_EDEFAULT);
@@ -296,7 +272,7 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				return command_parameter != null;
+				return command_parameter != null && !command_parameter.isEmpty();
 			case Devops2Package.COMMAND__INPUT:
 				return INPUT_EDEFAULT == null ? input != null : !INPUT_EDEFAULT.equals(input);
 			case Devops2Package.COMMAND__PARAMETERS:

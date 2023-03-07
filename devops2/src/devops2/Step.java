@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link devops2.Step#getArtifact <em>Artifact</em>}</li>
  *   <li>{@link devops2.Step#getTool_framework <em>Tool framework</em>}</li>
  *   <li>{@link devops2.Step#getNamestep <em>Namestep</em>}</li>
+ *   <li>{@link devops2.Step#getDepends <em>Depends</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getStep()
@@ -96,5 +97,17 @@ public interface Step extends EObject {
 	 * @generated
 	 */
 	void setNamestep(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Depends</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Step}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Depends</em>' reference list.
+	 * @see devops2.Devops2Package#getStep_Depends()
+	 * @model
+	 * @generated
+	 */
+	EList<Step> getDepends();
 
 } // Step
