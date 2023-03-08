@@ -64,9 +64,7 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 			case Devops2Package.WHEN: return createWhen();
 			case Devops2Package.ARTIFACT: return createArtifact();
 			case Devops2Package.TOOL_FRAMEWORK: return createTool_framework();
-			case Devops2Package.BUILD: return createBuild();
-			case Devops2Package.TEST: return createTest();
-			case Devops2Package.DEPLOY: return createDeploy();
+			case Devops2Package.PARALLEL_JOB: return createParallel_job();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -137,36 +135,6 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Test createTest() {
-		TestImpl test = new TestImpl();
-		return test;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Build createBuild() {
-		BuildImpl build = new BuildImpl();
-		return build;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Deploy createDeploy() {
-		DeployImpl deploy = new DeployImpl();
-		return deploy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Artifact createArtifact() {
 		ArtifactImpl artifact = new ArtifactImpl();
 		return artifact;
@@ -180,6 +148,16 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	public Tool_framework createTool_framework() {
 		Tool_frameworkImpl tool_framework = new Tool_frameworkImpl();
 		return tool_framework;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parallel_job createParallel_job() {
+		Parallel_jobImpl parallel_job = new Parallel_jobImpl();
+		return parallel_job;
 	}
 
 	/**

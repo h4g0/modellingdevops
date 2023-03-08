@@ -19,31 +19,30 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link devops2.impl.ArtifactImpl#getNameartifact <em>Nameartifact</em>}</li>
+ *   <li>{@link devops2.impl.ArtifactImpl#getName3 <em>Name3</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifact {
 	/**
-	 * The default value of the '{@link #getNameartifact() <em>Nameartifact</em>}' attribute.
+	 * The default value of the '{@link #getName3() <em>Name3</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameartifact()
+	 * @see #getName3()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAMEARTIFACT_EDEFAULT = null;
+	protected static final String NAME3_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getNameartifact() <em>Nameartifact</em>}' attribute.
+	 * The cached value of the '{@link #getName3() <em>Name3</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNameartifact()
+	 * @see #getName3()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nameartifact = NAMEARTIFACT_EDEFAULT;
-
+	protected String name3 = NAME3_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,8 +67,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNameartifact() {
-		return nameartifact;
+	public String getName3() {
+		return name3;
 	}
 
 	/**
@@ -77,11 +76,11 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNameartifact(String newNameartifact) {
-		String oldNameartifact = nameartifact;
-		nameartifact = newNameartifact;
+	public void setName3(String newName3) {
+		String oldName3 = name3;
+		name3 = newName3;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.ARTIFACT__NAMEARTIFACT, oldNameartifact, nameartifact));
+			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.ARTIFACT__NAME3, oldName3, name3));
 	}
 
 	/**
@@ -92,8 +91,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Devops2Package.ARTIFACT__NAMEARTIFACT:
-				return getNameartifact();
+			case Devops2Package.ARTIFACT__NAME3:
+				return getName3();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,8 +105,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Devops2Package.ARTIFACT__NAMEARTIFACT:
-				setNameartifact((String)newValue);
+			case Devops2Package.ARTIFACT__NAME3:
+				setName3((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -121,8 +120,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Devops2Package.ARTIFACT__NAMEARTIFACT:
-				setNameartifact(NAMEARTIFACT_EDEFAULT);
+			case Devops2Package.ARTIFACT__NAME3:
+				setName3(NAME3_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -136,8 +135,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Devops2Package.ARTIFACT__NAMEARTIFACT:
-				return NAMEARTIFACT_EDEFAULT == null ? nameartifact != null : !NAMEARTIFACT_EDEFAULT.equals(nameartifact);
+			case Devops2Package.ARTIFACT__NAME3:
+				return NAME3_EDEFAULT == null ? name3 != null : !NAME3_EDEFAULT.equals(name3);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,8 +151,8 @@ public class ArtifactImpl extends MinimalEObjectImpl.Container implements Artifa
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Nameartifact: ");
-		result.append(nameartifact);
+		result.append(" (Name3: ");
+		result.append(name3);
 		result.append(')');
 		return result.toString();
 	}

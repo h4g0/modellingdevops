@@ -114,24 +114,10 @@ public class Devops2Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Devops2Package.BUILD: {
-				Build build = (Build)theEObject;
-				T result = caseBuild(build);
-				if (result == null) result = caseJob(build);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Devops2Package.TEST: {
-				Test test = (Test)theEObject;
-				T result = caseTest(test);
-				if (result == null) result = caseJob(test);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case Devops2Package.DEPLOY: {
-				Deploy deploy = (Deploy)theEObject;
-				T result = caseDeploy(deploy);
-				if (result == null) result = caseJob(deploy);
+			case Devops2Package.PARALLEL_JOB: {
+				Parallel_job parallel_job = (Parallel_job)theEObject;
+				T result = caseParallel_job(parallel_job);
+				if (result == null) result = caseJob(parallel_job);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -230,51 +216,6 @@ public class Devops2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Test</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Test</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTest(Test object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Build</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Build</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBuild(Build object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Deploy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Deploy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDeploy(Deploy object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Artifact</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -301,6 +242,21 @@ public class Devops2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTool_framework(Tool_framework object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Parallel job</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Parallel job</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParallel_job(Parallel_job object) {
 		return null;
 	}
 

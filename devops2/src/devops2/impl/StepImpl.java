@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link devops2.impl.StepImpl#getStep_parameter <em>Step parameter</em>}</li>
  *   <li>{@link devops2.impl.StepImpl#getArtifact <em>Artifact</em>}</li>
  *   <li>{@link devops2.impl.StepImpl#getTool_framework <em>Tool framework</em>}</li>
- *   <li>{@link devops2.impl.StepImpl#getNamestep <em>Namestep</em>}</li>
+ *   <li>{@link devops2.impl.StepImpl#getName2 <em>Name2</em>}</li>
  *   <li>{@link devops2.impl.StepImpl#getDepends <em>Depends</em>}</li>
  * </ul>
  *
@@ -85,24 +85,24 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	protected EList<Tool_framework> tool_framework;
 
 	/**
-	 * The default value of the '{@link #getNamestep() <em>Namestep</em>}' attribute.
+	 * The default value of the '{@link #getName2() <em>Name2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNamestep()
+	 * @see #getName2()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAMESTEP_EDEFAULT = null;
+	protected static final String NAME2_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNamestep() <em>Namestep</em>}' attribute.
+	 * The cached value of the '{@link #getName2() <em>Name2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNamestep()
+	 * @see #getName2()
 	 * @generated
 	 * @ordered
 	 */
-	protected String namestep = NAMESTEP_EDEFAULT;
+	protected String name2 = NAME2_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDepends() <em>Depends</em>}' reference list.
@@ -186,8 +186,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNamestep() {
-		return namestep;
+	public String getName2() {
+		return name2;
 	}
 
 	/**
@@ -195,11 +195,11 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNamestep(String newNamestep) {
-		String oldNamestep = namestep;
-		namestep = newNamestep;
+	public void setName2(String newName2) {
+		String oldName2 = name2;
+		name2 = newName2;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.STEP__NAMESTEP, oldNamestep, namestep));
+			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.STEP__NAME2, oldName2, name2));
 	}
 
 	/**
@@ -244,8 +244,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 				return getArtifact();
 			case Devops2Package.STEP__TOOL_FRAMEWORK:
 				return getTool_framework();
-			case Devops2Package.STEP__NAMESTEP:
-				return getNamestep();
+			case Devops2Package.STEP__NAME2:
+				return getName2();
 			case Devops2Package.STEP__DEPENDS:
 				return getDepends();
 		}
@@ -277,8 +277,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 				getTool_framework().clear();
 				getTool_framework().addAll((Collection<? extends Tool_framework>)newValue);
 				return;
-			case Devops2Package.STEP__NAMESTEP:
-				setNamestep((String)newValue);
+			case Devops2Package.STEP__NAME2:
+				setName2((String)newValue);
 				return;
 			case Devops2Package.STEP__DEPENDS:
 				getDepends().clear();
@@ -308,8 +308,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 			case Devops2Package.STEP__TOOL_FRAMEWORK:
 				getTool_framework().clear();
 				return;
-			case Devops2Package.STEP__NAMESTEP:
-				setNamestep(NAMESTEP_EDEFAULT);
+			case Devops2Package.STEP__NAME2:
+				setName2(NAME2_EDEFAULT);
 				return;
 			case Devops2Package.STEP__DEPENDS:
 				getDepends().clear();
@@ -334,8 +334,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 				return artifact != null && !artifact.isEmpty();
 			case Devops2Package.STEP__TOOL_FRAMEWORK:
 				return tool_framework != null && !tool_framework.isEmpty();
-			case Devops2Package.STEP__NAMESTEP:
-				return NAMESTEP_EDEFAULT == null ? namestep != null : !NAMESTEP_EDEFAULT.equals(namestep);
+			case Devops2Package.STEP__NAME2:
+				return NAME2_EDEFAULT == null ? name2 != null : !NAME2_EDEFAULT.equals(name2);
 			case Devops2Package.STEP__DEPENDS:
 				return depends != null && !depends.isEmpty();
 		}
@@ -352,8 +352,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Namestep: ");
-		result.append(namestep);
+		result.append(" (Name2: ");
+		result.append(name2);
 		result.append(')');
 		return result.toString();
 	}

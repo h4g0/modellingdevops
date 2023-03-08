@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link devops2.Tool_framework#getNametool <em>Nametool</em>}</li>
+ *   <li>{@link devops2.Tool_framework#getName5 <em>Name5</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getTool_framework()
@@ -23,24 +23,24 @@ import org.eclipse.emf.ecore.EObject;
 public interface Tool_framework extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Nametool</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name5</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nametool</em>' attribute.
-	 * @see #setNametool(String)
-	 * @see devops2.Devops2Package#getTool_framework_Nametool()
+	 * @return the value of the '<em>Name5</em>' attribute.
+	 * @see #setName5(String)
+	 * @see devops2.Devops2Package#getTool_framework_Name5()
 	 * @model
 	 * @generated
 	 */
-	String getNametool();
+	String getName5();
 
 	/**
-	 * Sets the value of the '{@link devops2.Tool_framework#getNametool <em>Nametool</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Tool_framework#getName5 <em>Name5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nametool</em>' attribute.
-	 * @see #getNametool()
+	 * @param value the new value of the '<em>Name5</em>' attribute.
+	 * @see #getName5()
 	 * @generated
 	 */
-	void setNametool(String value);
+	void setName5(String value);
 } // Tool_framework

@@ -85,13 +85,22 @@ public interface Devops2Package extends EPackage {
 	int PIPELINE__JOB = 1;
 
 	/**
-	 * The feature id for the '<em><b>Namepipeline</b></em>' attribute.
+	 * The feature id for the '<em><b>Name0</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE__NAMEPIPELINE = 2;
+	int PIPELINE__NAME0 = 2;
+
+	/**
+	 * The feature id for the '<em><b>Pipeline tool framework</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__PIPELINE_TOOL_FRAMEWORK = 3;
 
 	/**
 	 * The number of structural features of the '<em>Pipeline</em>' class.
@@ -100,7 +109,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE_FEATURE_COUNT = 3;
+	int PIPELINE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Pipeline</em>' class.
@@ -132,13 +141,13 @@ public interface Devops2Package extends EPackage {
 	int JOB__STEP = 0;
 
 	/**
-	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
+	 * The feature id for the '<em><b>Name1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__NAMEJOB = 1;
+	int JOB__NAME1 = 1;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list.
@@ -150,13 +159,22 @@ public interface Devops2Package extends EPackage {
 	int JOB__USES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Tool framework job</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__TOOL_FRAMEWORK_JOB = 3;
+
+	/**
 	 * The number of structural features of the '<em>Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = 3;
+	int JOB_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Job</em>' class.
@@ -215,13 +233,13 @@ public interface Devops2Package extends EPackage {
 	int STEP__TOOL_FRAMEWORK = 3;
 
 	/**
-	 * The feature id for the '<em><b>Namestep</b></em>' attribute.
+	 * The feature id for the '<em><b>Name2</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP__NAMESTEP = 4;
+	int STEP__NAME2 = 4;
 
 	/**
 	 * The feature id for the '<em><b>Depends</b></em>' reference list.
@@ -270,31 +288,31 @@ public interface Devops2Package extends EPackage {
 	int COMMAND__COMMAND_PARAMETER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMAND__INPUT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__PARAMETERS = 2;
+	int COMMAND__PARAMETERS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Namecommand</b></em>' attribute.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__NAMECOMMAND = 3;
+	int COMMAND__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Tool</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMAND__TOOL = 3;
 
 	/**
 	 * The number of structural features of the '<em>Command</em>' class.
@@ -372,13 +390,13 @@ public interface Devops2Package extends EPackage {
 	int WHEN = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name when</b></em>' attribute.
+	 * The feature id for the '<em><b>Name4</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHEN__NAME_WHEN = 0;
+	int WHEN__NAME4 = 0;
 
 	/**
 	 * The feature id for the '<em><b>Trigger</b></em>' attribute.
@@ -417,36 +435,6 @@ public interface Devops2Package extends EPackage {
 	int WHEN_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link devops2.impl.TestImpl <em>Test</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see devops2.impl.TestImpl
-	 * @see devops2.impl.Devops2PackageImpl#getTest()
-	 * @generated
-	 */
-	int TEST = 9;
-
-	/**
-	 * The meta object id for the '{@link devops2.impl.BuildImpl <em>Build</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see devops2.impl.BuildImpl
-	 * @see devops2.impl.Devops2PackageImpl#getBuild()
-	 * @generated
-	 */
-	int BUILD = 8;
-
-	/**
-	 * The meta object id for the '{@link devops2.impl.DeployImpl <em>Deploy</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see devops2.impl.DeployImpl
-	 * @see devops2.impl.Devops2PackageImpl#getDeploy()
-	 * @generated
-	 */
-	int DEPLOY = 10;
-
-	/**
 	 * The meta object id for the '{@link devops2.impl.ArtifactImpl <em>Artifact</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,13 +445,13 @@ public interface Devops2Package extends EPackage {
 	int ARTIFACT = 6;
 
 	/**
-	 * The feature id for the '<em><b>Nameartifact</b></em>' attribute.
+	 * The feature id for the '<em><b>Name3</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__NAMEARTIFACT = 0;
+	int ARTIFACT__NAME3 = 0;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -494,13 +482,13 @@ public interface Devops2Package extends EPackage {
 	int TOOL_FRAMEWORK = 7;
 
 	/**
-	 * The feature id for the '<em><b>Nametool</b></em>' attribute.
+	 * The feature id for the '<em><b>Name5</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL_FRAMEWORK__NAMETOOL = 0;
+	int TOOL_FRAMEWORK__NAME5 = 0;
 
 	/**
 	 * The number of structural features of the '<em>Tool framework</em>' class.
@@ -521,49 +509,14 @@ public interface Devops2Package extends EPackage {
 	int TOOL_FRAMEWORK_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
+	 * The meta object id for the '{@link devops2.impl.Parallel_jobImpl <em>Parallel job</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see devops2.impl.Parallel_jobImpl
+	 * @see devops2.impl.Devops2PackageImpl#getParallel_job()
 	 * @generated
-	 * @ordered
 	 */
-	int BUILD__STEP = JOB__STEP;
-
-	/**
-	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__NAMEJOB = JOB__NAMEJOB;
-
-	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD__USES = JOB__USES;
-
-	/**
-	 * The number of structural features of the '<em>Build</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Build</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUILD_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
+	int PARALLEL_JOB = 8;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
@@ -572,61 +525,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__STEP = JOB__STEP;
+	int PARALLEL_JOB__STEP = JOB__STEP;
 
 	/**
-	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
+	 * The feature id for the '<em><b>Name1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST__NAMEJOB = JOB__NAMEJOB;
-
-	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST__USES = JOB__USES;
-
-	/**
-	 * The number of structural features of the '<em>Test</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Test</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEST_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__STEP = JOB__STEP;
-
-	/**
-	 * The feature id for the '<em><b>Namejob</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPLOY__NAMEJOB = JOB__NAMEJOB;
+	int PARALLEL_JOB__NAME1 = JOB__NAME1;
 
 	/**
 	 * The feature id for the '<em><b>Uses</b></em>' reference list.
@@ -635,26 +543,34 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY__USES = JOB__USES;
+	int PARALLEL_JOB__USES = JOB__USES;
 
 	/**
-	 * The number of structural features of the '<em>Deploy</em>' class.
+	 * The feature id for the '<em><b>Tool framework job</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
+	int PARALLEL_JOB__TOOL_FRAMEWORK_JOB = JOB__TOOL_FRAMEWORK_JOB;
 
 	/**
-	 * The number of operations of the '<em>Deploy</em>' class.
+	 * The number of structural features of the '<em>Parallel job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPLOY_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
+	int PARALLEL_JOB_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
 
+	/**
+	 * The number of operations of the '<em>Parallel job</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARALLEL_JOB_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Pipeline <em>Pipeline</em>}'.
@@ -678,15 +594,26 @@ public interface Devops2Package extends EPackage {
 	EReference getPipeline_Job();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Pipeline#getNamepipeline <em>Namepipeline</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Pipeline#getName0 <em>Name0</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Namepipeline</em>'.
-	 * @see devops2.Pipeline#getNamepipeline()
+	 * @return the meta object for the attribute '<em>Name0</em>'.
+	 * @see devops2.Pipeline#getName0()
 	 * @see #getPipeline()
 	 * @generated
 	 */
-	EAttribute getPipeline_Namepipeline();
+	EAttribute getPipeline_Name0();
+
+	/**
+	 * Returns the meta object for the reference list '{@link devops2.Pipeline#getPipeline_tool_framework <em>Pipeline tool framework</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Pipeline tool framework</em>'.
+	 * @see devops2.Pipeline#getPipeline_tool_framework()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Pipeline_tool_framework();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link devops2.Pipeline#getWhen <em>When</em>}'.
@@ -721,15 +648,15 @@ public interface Devops2Package extends EPackage {
 	EReference getJob_Step();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Job#getNamejob <em>Namejob</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Job#getName1 <em>Name1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Namejob</em>'.
-	 * @see devops2.Job#getNamejob()
+	 * @return the meta object for the attribute '<em>Name1</em>'.
+	 * @see devops2.Job#getName1()
 	 * @see #getJob()
 	 * @generated
 	 */
-	EAttribute getJob_Namejob();
+	EAttribute getJob_Name1();
 
 	/**
 	 * Returns the meta object for the reference list '{@link devops2.Job#getUses <em>Uses</em>}'.
@@ -741,6 +668,17 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getJob_Uses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link devops2.Job#getTool_framework_job <em>Tool framework job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Tool framework job</em>'.
+	 * @see devops2.Job#getTool_framework_job()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_Tool_framework_job();
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Step <em>Step</em>}'.
@@ -797,15 +735,15 @@ public interface Devops2Package extends EPackage {
 	EReference getStep_Tool_framework();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Step#getNamestep <em>Namestep</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Step#getName2 <em>Name2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Namestep</em>'.
-	 * @see devops2.Step#getNamestep()
+	 * @return the meta object for the attribute '<em>Name2</em>'.
+	 * @see devops2.Step#getName2()
 	 * @see #getStep()
 	 * @generated
 	 */
-	EAttribute getStep_Namestep();
+	EAttribute getStep_Name2();
 
 	/**
 	 * Returns the meta object for the reference list '{@link devops2.Step#getDepends <em>Depends</em>}'.
@@ -840,17 +778,6 @@ public interface Devops2Package extends EPackage {
 	EReference getCommand_Command_parameter();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Command#getInput <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input</em>'.
-	 * @see devops2.Command#getInput()
-	 * @see #getCommand()
-	 * @generated
-	 */
-	EAttribute getCommand_Input();
-
-	/**
 	 * Returns the meta object for the attribute '{@link devops2.Command#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -862,15 +789,26 @@ public interface Devops2Package extends EPackage {
 	EAttribute getCommand_Parameters();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Command#getNamecommand <em>Namecommand</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Command#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Namecommand</em>'.
-	 * @see devops2.Command#getNamecommand()
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see devops2.Command#getDescription()
 	 * @see #getCommand()
 	 * @generated
 	 */
-	EAttribute getCommand_Namecommand();
+	EAttribute getCommand_Description();
+
+	/**
+	 * Returns the meta object for the reference '{@link devops2.Command#getTool <em>Tool</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tool</em>'.
+	 * @see devops2.Command#getTool()
+	 * @see #getCommand()
+	 * @generated
+	 */
+	EReference getCommand_Tool();
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Parameter <em>Parameter</em>}'.
@@ -915,15 +853,15 @@ public interface Devops2Package extends EPackage {
 	EClass getWhen();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.When#getName_when <em>Name when</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.When#getName4 <em>Name4</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name when</em>'.
-	 * @see devops2.When#getName_when()
+	 * @return the meta object for the attribute '<em>Name4</em>'.
+	 * @see devops2.When#getName4()
 	 * @see #getWhen()
 	 * @generated
 	 */
-	EAttribute getWhen_Name_when();
+	EAttribute getWhen_Name4();
 
 	/**
 	 * Returns the meta object for the attribute '{@link devops2.When#getTimer <em>Timer</em>}'.
@@ -948,36 +886,6 @@ public interface Devops2Package extends EPackage {
 	EAttribute getWhen_Trigger();
 
 	/**
-	 * Returns the meta object for class '{@link devops2.Test <em>Test</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Test</em>'.
-	 * @see devops2.Test
-	 * @generated
-	 */
-	EClass getTest();
-
-	/**
-	 * Returns the meta object for class '{@link devops2.Build <em>Build</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Build</em>'.
-	 * @see devops2.Build
-	 * @generated
-	 */
-	EClass getBuild();
-
-	/**
-	 * Returns the meta object for class '{@link devops2.Deploy <em>Deploy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Deploy</em>'.
-	 * @see devops2.Deploy
-	 * @generated
-	 */
-	EClass getDeploy();
-
-	/**
 	 * Returns the meta object for class '{@link devops2.Artifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -988,15 +896,15 @@ public interface Devops2Package extends EPackage {
 	EClass getArtifact();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Artifact#getNameartifact <em>Nameartifact</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Artifact#getName3 <em>Name3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nameartifact</em>'.
-	 * @see devops2.Artifact#getNameartifact()
+	 * @return the meta object for the attribute '<em>Name3</em>'.
+	 * @see devops2.Artifact#getName3()
 	 * @see #getArtifact()
 	 * @generated
 	 */
-	EAttribute getArtifact_Nameartifact();
+	EAttribute getArtifact_Name3();
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Tool_framework <em>Tool framework</em>}'.
@@ -1009,15 +917,25 @@ public interface Devops2Package extends EPackage {
 	EClass getTool_framework();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Tool_framework#getNametool <em>Nametool</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Tool_framework#getName5 <em>Name5</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nametool</em>'.
-	 * @see devops2.Tool_framework#getNametool()
+	 * @return the meta object for the attribute '<em>Name5</em>'.
+	 * @see devops2.Tool_framework#getName5()
 	 * @see #getTool_framework()
 	 * @generated
 	 */
-	EAttribute getTool_framework_Nametool();
+	EAttribute getTool_framework_Name5();
+
+	/**
+	 * Returns the meta object for class '{@link devops2.Parallel_job <em>Parallel job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parallel job</em>'.
+	 * @see devops2.Parallel_job
+	 * @generated
+	 */
+	EClass getParallel_job();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1059,12 +977,19 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference PIPELINE__JOB = eINSTANCE.getPipeline_Job();
 		/**
-		 * The meta object literal for the '<em><b>Namepipeline</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name0</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PIPELINE__NAMEPIPELINE = eINSTANCE.getPipeline_Namepipeline();
+		EAttribute PIPELINE__NAME0 = eINSTANCE.getPipeline_Name0();
+		/**
+		 * The meta object literal for the '<em><b>Pipeline tool framework</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__PIPELINE_TOOL_FRAMEWORK = eINSTANCE.getPipeline_Pipeline_tool_framework();
 		/**
 		 * The meta object literal for the '<em><b>When</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1089,12 +1014,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference JOB__STEP = eINSTANCE.getJob_Step();
 		/**
-		 * The meta object literal for the '<em><b>Namejob</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name1</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JOB__NAMEJOB = eINSTANCE.getJob_Namejob();
+		EAttribute JOB__NAME1 = eINSTANCE.getJob_Name1();
 		/**
 		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1102,6 +1027,13 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EReference JOB__USES = eINSTANCE.getJob_Uses();
+		/**
+		 * The meta object literal for the '<em><b>Tool framework job</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__TOOL_FRAMEWORK_JOB = eINSTANCE.getJob_Tool_framework_job();
 		/**
 		 * The meta object literal for the '{@link devops2.impl.StepImpl <em>Step</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1140,12 +1072,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference STEP__TOOL_FRAMEWORK = eINSTANCE.getStep_Tool_framework();
 		/**
-		 * The meta object literal for the '<em><b>Namestep</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name2</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEP__NAMESTEP = eINSTANCE.getStep_Namestep();
+		EAttribute STEP__NAME2 = eINSTANCE.getStep_Name2();
 		/**
 		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1170,13 +1102,6 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference COMMAND__COMMAND_PARAMETER = eINSTANCE.getCommand_Command_parameter();
 		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMAND__INPUT = eINSTANCE.getCommand_Input();
-		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1184,12 +1109,19 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute COMMAND__PARAMETERS = eINSTANCE.getCommand_Parameters();
 		/**
-		 * The meta object literal for the '<em><b>Namecommand</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMMAND__NAMECOMMAND = eINSTANCE.getCommand_Namecommand();
+		EAttribute COMMAND__DESCRIPTION = eINSTANCE.getCommand_Description();
+		/**
+		 * The meta object literal for the '<em><b>Tool</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMAND__TOOL = eINSTANCE.getCommand_Tool();
 		/**
 		 * The meta object literal for the '{@link devops2.impl.ParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1223,12 +1155,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass WHEN = eINSTANCE.getWhen();
 		/**
-		 * The meta object literal for the '<em><b>Name when</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name4</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute WHEN__NAME_WHEN = eINSTANCE.getWhen_Name_when();
+		EAttribute WHEN__NAME4 = eINSTANCE.getWhen_Name4();
 		/**
 		 * The meta object literal for the '<em><b>Timer</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -1244,33 +1176,6 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute WHEN__TRIGGER = eINSTANCE.getWhen_Trigger();
 		/**
-		 * The meta object literal for the '{@link devops2.impl.TestImpl <em>Test</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see devops2.impl.TestImpl
-		 * @see devops2.impl.Devops2PackageImpl#getTest()
-		 * @generated
-		 */
-		EClass TEST = eINSTANCE.getTest();
-		/**
-		 * The meta object literal for the '{@link devops2.impl.BuildImpl <em>Build</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see devops2.impl.BuildImpl
-		 * @see devops2.impl.Devops2PackageImpl#getBuild()
-		 * @generated
-		 */
-		EClass BUILD = eINSTANCE.getBuild();
-		/**
-		 * The meta object literal for the '{@link devops2.impl.DeployImpl <em>Deploy</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see devops2.impl.DeployImpl
-		 * @see devops2.impl.Devops2PackageImpl#getDeploy()
-		 * @generated
-		 */
-		EClass DEPLOY = eINSTANCE.getDeploy();
-		/**
 		 * The meta object literal for the '{@link devops2.impl.ArtifactImpl <em>Artifact</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1280,12 +1185,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass ARTIFACT = eINSTANCE.getArtifact();
 		/**
-		 * The meta object literal for the '<em><b>Nameartifact</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name3</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTIFACT__NAMEARTIFACT = eINSTANCE.getArtifact_Nameartifact();
+		EAttribute ARTIFACT__NAME3 = eINSTANCE.getArtifact_Name3();
 		/**
 		 * The meta object literal for the '{@link devops2.impl.Tool_frameworkImpl <em>Tool framework</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1296,12 +1201,21 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass TOOL_FRAMEWORK = eINSTANCE.getTool_framework();
 		/**
-		 * The meta object literal for the '<em><b>Nametool</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name5</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TOOL_FRAMEWORK__NAMETOOL = eINSTANCE.getTool_framework_Nametool();
+		EAttribute TOOL_FRAMEWORK__NAME5 = eINSTANCE.getTool_framework_Name5();
+		/**
+		 * The meta object literal for the '{@link devops2.impl.Parallel_jobImpl <em>Parallel job</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see devops2.impl.Parallel_jobImpl
+		 * @see devops2.impl.Devops2PackageImpl#getParallel_job()
+		 * @generated
+		 */
+		EClass PARALLEL_JOB = eINSTANCE.getParallel_job();
 
 	}
 

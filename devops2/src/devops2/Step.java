@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link devops2.Step#getStep_parameter <em>Step parameter</em>}</li>
  *   <li>{@link devops2.Step#getArtifact <em>Artifact</em>}</li>
  *   <li>{@link devops2.Step#getTool_framework <em>Tool framework</em>}</li>
- *   <li>{@link devops2.Step#getNamestep <em>Namestep</em>}</li>
+ *   <li>{@link devops2.Step#getName2 <em>Name2</em>}</li>
  *   <li>{@link devops2.Step#getDepends <em>Depends</em>}</li>
  * </ul>
  *
@@ -77,26 +77,26 @@ public interface Step extends EObject {
 	EList<Tool_framework> getTool_framework();
 
 	/**
-	 * Returns the value of the '<em><b>Namestep</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name2</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Namestep</em>' attribute.
-	 * @see #setNamestep(String)
-	 * @see devops2.Devops2Package#getStep_Namestep()
+	 * @return the value of the '<em>Name2</em>' attribute.
+	 * @see #setName2(String)
+	 * @see devops2.Devops2Package#getStep_Name2()
 	 * @model
 	 * @generated
 	 */
-	String getNamestep();
+	String getName2();
 
 	/**
-	 * Sets the value of the '{@link devops2.Step#getNamestep <em>Namestep</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Step#getName2 <em>Name2</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Namestep</em>' attribute.
-	 * @see #getNamestep()
+	 * @param value the new value of the '<em>Name2</em>' attribute.
+	 * @see #getName2()
 	 * @generated
 	 */
-	void setNamestep(String value);
+	void setName2(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Depends</b></em>' reference list.

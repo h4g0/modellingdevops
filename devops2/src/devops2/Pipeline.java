@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link devops2.Pipeline#getWhen <em>When</em>}</li>
  *   <li>{@link devops2.Pipeline#getJob <em>Job</em>}</li>
- *   <li>{@link devops2.Pipeline#getNamepipeline <em>Namepipeline</em>}</li>
+ *   <li>{@link devops2.Pipeline#getName0 <em>Name0</em>}</li>
+ *   <li>{@link devops2.Pipeline#getPipeline_tool_framework <em>Pipeline tool framework</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getPipeline()
@@ -38,26 +39,38 @@ public interface Pipeline extends EObject {
 	EList<Job> getJob();
 
 	/**
-	 * Returns the value of the '<em><b>Namepipeline</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name0</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Namepipeline</em>' attribute.
-	 * @see #setNamepipeline(String)
-	 * @see devops2.Devops2Package#getPipeline_Namepipeline()
+	 * @return the value of the '<em>Name0</em>' attribute.
+	 * @see #setName0(String)
+	 * @see devops2.Devops2Package#getPipeline_Name0()
 	 * @model
 	 * @generated
 	 */
-	String getNamepipeline();
+	String getName0();
 
 	/**
-	 * Sets the value of the '{@link devops2.Pipeline#getNamepipeline <em>Namepipeline</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Pipeline#getName0 <em>Name0</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Namepipeline</em>' attribute.
-	 * @see #getNamepipeline()
+	 * @param value the new value of the '<em>Name0</em>' attribute.
+	 * @see #getName0()
 	 * @generated
 	 */
-	void setNamepipeline(String value);
+	void setName0(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Pipeline tool framework</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Tool_framework}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pipeline tool framework</em>' reference list.
+	 * @see devops2.Devops2Package#getPipeline_Pipeline_tool_framework()
+	 * @model
+	 * @generated
+	 */
+	EList<Tool_framework> getPipeline_tool_framework();
 
 	/**
 	 * Returns the value of the '<em><b>When</b></em>' containment reference list.

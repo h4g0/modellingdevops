@@ -76,33 +76,6 @@ public interface Devops2Factory extends EFactory {
 	When createWhen();
 
 	/**
-	 * Returns a new object of class '<em>Test</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Test</em>'.
-	 * @generated
-	 */
-	Test createTest();
-
-	/**
-	 * Returns a new object of class '<em>Build</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Build</em>'.
-	 * @generated
-	 */
-	Build createBuild();
-
-	/**
-	 * Returns a new object of class '<em>Deploy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Deploy</em>'.
-	 * @generated
-	 */
-	Deploy createDeploy();
-
-	/**
 	 * Returns a new object of class '<em>Artifact</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +92,15 @@ public interface Devops2Factory extends EFactory {
 	 * @generated
 	 */
 	Tool_framework createTool_framework();
+
+	/**
+	 * Returns a new object of class '<em>Parallel job</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parallel job</em>'.
+	 * @generated
+	 */
+	Parallel_job createParallel_job();
 
 	/**
 	 * Returns the package supported by this factory.

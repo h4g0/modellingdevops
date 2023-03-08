@@ -8,44 +8,44 @@
     <genClasses ecoreClass="devops2.ecore#//Pipeline">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Pipeline/when"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference devops2.ecore#//Pipeline/job"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Pipeline/Namepipeline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Pipeline/Name0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Pipeline/pipeline_tool_framework"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Job">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Job/step"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Job/Namejob"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Job/Name1"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Job/uses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Job/tool_framework_job"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Step">
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Step/command"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Step/step_parameter"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Step/artifact"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Step/tool_framework"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Step/Namestep"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Step/Name2"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Step/depends"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Command">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Command/command_parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/input"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/parameters"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Namecommand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Command/tool"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Parameter/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Parameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Parameter/Key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Parameter/Value"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//When">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/name_when"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/trigger"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/timer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/Name4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/Trigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//When/Timer"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Artifact">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Artifact/Nameartifact"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Artifact/Name3"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Tool_framework">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Tool_framework/Nametool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Tool_framework/Name5"/>
     </genClasses>
-    <genClasses ecoreClass="devops2.ecore#//Build"/>
-    <genClasses ecoreClass="devops2.ecore#//Test"/>
-    <genClasses ecoreClass="devops2.ecore#//Deploy"/>
+    <genClasses ecoreClass="devops2.ecore#//Parallel_job"/>
   </genPackages>
 </genmodel:GenModel>

@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link devops2.Job#getStep <em>Step</em>}</li>
- *   <li>{@link devops2.Job#getNamejob <em>Namejob</em>}</li>
+ *   <li>{@link devops2.Job#getName1 <em>Name1</em>}</li>
  *   <li>{@link devops2.Job#getUses <em>Uses</em>}</li>
+ *   <li>{@link devops2.Job#getTool_framework_job <em>Tool framework job</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getJob()
@@ -38,26 +39,26 @@ public interface Job extends EObject {
 	EList<Step> getStep();
 
 	/**
-	 * Returns the value of the '<em><b>Namejob</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Namejob</em>' attribute.
-	 * @see #setNamejob(String)
-	 * @see devops2.Devops2Package#getJob_Namejob()
+	 * @return the value of the '<em>Name1</em>' attribute.
+	 * @see #setName1(String)
+	 * @see devops2.Devops2Package#getJob_Name1()
 	 * @model
 	 * @generated
 	 */
-	String getNamejob();
+	String getName1();
 
 	/**
-	 * Sets the value of the '{@link devops2.Job#getNamejob <em>Namejob</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Job#getName1 <em>Name1</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Namejob</em>' attribute.
-	 * @see #getNamejob()
+	 * @param value the new value of the '<em>Name1</em>' attribute.
+	 * @see #getName1()
 	 * @generated
 	 */
-	void setNamejob(String value);
+	void setName1(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Uses</b></em>' reference list.
@@ -70,4 +71,16 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	EList<Job> getUses();
+
+	/**
+	 * Returns the value of the '<em><b>Tool framework job</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Tool_framework}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tool framework job</em>' reference list.
+	 * @see devops2.Devops2Package#getJob_Tool_framework_job()
+	 * @model
+	 * @generated
+	 */
+	EList<Tool_framework> getTool_framework_job();
 } // Job

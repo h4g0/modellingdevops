@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}</li>
- *   <li>{@link devops2.Command#getInput <em>Input</em>}</li>
  *   <li>{@link devops2.Command#getParameters <em>Parameters</em>}</li>
- *   <li>{@link devops2.Command#getNamecommand <em>Namecommand</em>}</li>
+ *   <li>{@link devops2.Command#getDescription <em>Description</em>}</li>
+ *   <li>{@link devops2.Command#getTool <em>Tool</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getCommand()
@@ -36,28 +36,6 @@ public interface Command extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getCommand_parameter();
-
-	/**
-	 * Returns the value of the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input</em>' attribute.
-	 * @see #setInput(String)
-	 * @see devops2.Devops2Package#getCommand_Input()
-	 * @model
-	 * @generated
-	 */
-	String getInput();
-
-	/**
-	 * Sets the value of the '{@link devops2.Command#getInput <em>Input</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input</em>' attribute.
-	 * @see #getInput()
-	 * @generated
-	 */
-	void setInput(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
@@ -82,25 +60,47 @@ public interface Command extends EObject {
 	void setParameters(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Namecommand</b></em>' attribute.
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Namecommand</em>' attribute.
-	 * @see #setNamecommand(String)
-	 * @see devops2.Devops2Package#getCommand_Namecommand()
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see devops2.Devops2Package#getCommand_Description()
 	 * @model id="true"
 	 * @generated
 	 */
-	String getNamecommand();
+	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link devops2.Command#getNamecommand <em>Namecommand</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Command#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Namecommand</em>' attribute.
-	 * @see #getNamecommand()
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
 	 * @generated
 	 */
-	void setNamecommand(String value);
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Tool</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tool</em>' reference.
+	 * @see #setTool(Tool_framework)
+	 * @see devops2.Devops2Package#getCommand_Tool()
+	 * @model
+	 * @generated
+	 */
+	Tool_framework getTool();
+
+	/**
+	 * Sets the value of the '{@link devops2.Command#getTool <em>Tool</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tool</em>' reference.
+	 * @see #getTool()
+	 * @generated
+	 */
+	void setTool(Tool_framework value);
 
 } // Command

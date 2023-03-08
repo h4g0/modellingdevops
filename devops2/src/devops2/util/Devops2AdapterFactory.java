@@ -100,16 +100,8 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 				return createTool_frameworkAdapter();
 			}
 			@Override
-			public Adapter caseBuild(Build object) {
-				return createBuildAdapter();
-			}
-			@Override
-			public Adapter caseTest(Test object) {
-				return createTestAdapter();
-			}
-			@Override
-			public Adapter caseDeploy(Deploy object) {
-				return createDeployAdapter();
+			public Adapter caseParallel_job(Parallel_job object) {
+				return createParallel_jobAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -216,48 +208,6 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Test <em>Test</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see devops2.Test
-	 * @generated
-	 */
-	public Adapter createTestAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Build <em>Build</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see devops2.Build
-	 * @generated
-	 */
-	public Adapter createBuildAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Deploy <em>Deploy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see devops2.Deploy
-	 * @generated
-	 */
-	public Adapter createDeployAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link devops2.Artifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -282,6 +232,20 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTool_frameworkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link devops2.Parallel_job <em>Parallel job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see devops2.Parallel_job
+	 * @generated
+	 */
+	public Adapter createParallel_jobAdapter() {
 		return null;
 	}
 

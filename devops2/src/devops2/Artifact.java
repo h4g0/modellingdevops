@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link devops2.Artifact#getNameartifact <em>Nameartifact</em>}</li>
+ *   <li>{@link devops2.Artifact#getName3 <em>Name3</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getArtifact()
@@ -23,24 +23,24 @@ import org.eclipse.emf.ecore.EObject;
 public interface Artifact extends EObject {
 
 	/**
-	 * Returns the value of the '<em><b>Nameartifact</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name3</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nameartifact</em>' attribute.
-	 * @see #setNameartifact(String)
-	 * @see devops2.Devops2Package#getArtifact_Nameartifact()
+	 * @return the value of the '<em>Name3</em>' attribute.
+	 * @see #setName3(String)
+	 * @see devops2.Devops2Package#getArtifact_Name3()
 	 * @model
 	 * @generated
 	 */
-	String getNameartifact();
+	String getName3();
 
 	/**
-	 * Sets the value of the '{@link devops2.Artifact#getNameartifact <em>Nameartifact</em>}' attribute.
+	 * Sets the value of the '{@link devops2.Artifact#getName3 <em>Name3</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nameartifact</em>' attribute.
-	 * @see #getNameartifact()
+	 * @param value the new value of the '<em>Name3</em>' attribute.
+	 * @see #getName3()
 	 * @generated
 	 */
-	void setNameartifact(String value);
+	void setName3(String value);
 } // Artifact

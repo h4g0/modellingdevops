@@ -19,31 +19,30 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link devops2.impl.Tool_frameworkImpl#getNametool <em>Nametool</em>}</li>
+ *   <li>{@link devops2.impl.Tool_frameworkImpl#getName5 <em>Name5</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements Tool_framework {
 	/**
-	 * The default value of the '{@link #getNametool() <em>Nametool</em>}' attribute.
+	 * The default value of the '{@link #getName5() <em>Name5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNametool()
+	 * @see #getName5()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAMETOOL_EDEFAULT = null;
+	protected static final String NAME5_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getNametool() <em>Nametool</em>}' attribute.
+	 * The cached value of the '{@link #getName5() <em>Name5</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNametool()
+	 * @see #getName5()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nametool = NAMETOOL_EDEFAULT;
-
+	protected String name5 = NAME5_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,8 +67,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNametool() {
-		return nametool;
+	public String getName5() {
+		return name5;
 	}
 
 	/**
@@ -77,11 +76,11 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNametool(String newNametool) {
-		String oldNametool = nametool;
-		nametool = newNametool;
+	public void setName5(String newName5) {
+		String oldName5 = name5;
+		name5 = newName5;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.TOOL_FRAMEWORK__NAMETOOL, oldNametool, nametool));
+			eNotify(new ENotificationImpl(this, Notification.SET, Devops2Package.TOOL_FRAMEWORK__NAME5, oldName5, name5));
 	}
 
 	/**
@@ -92,8 +91,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Devops2Package.TOOL_FRAMEWORK__NAMETOOL:
-				return getNametool();
+			case Devops2Package.TOOL_FRAMEWORK__NAME5:
+				return getName5();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,8 +105,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Devops2Package.TOOL_FRAMEWORK__NAMETOOL:
-				setNametool((String)newValue);
+			case Devops2Package.TOOL_FRAMEWORK__NAME5:
+				setName5((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -121,8 +120,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Devops2Package.TOOL_FRAMEWORK__NAMETOOL:
-				setNametool(NAMETOOL_EDEFAULT);
+			case Devops2Package.TOOL_FRAMEWORK__NAME5:
+				setName5(NAME5_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -136,8 +135,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Devops2Package.TOOL_FRAMEWORK__NAMETOOL:
-				return NAMETOOL_EDEFAULT == null ? nametool != null : !NAMETOOL_EDEFAULT.equals(nametool);
+			case Devops2Package.TOOL_FRAMEWORK__NAME5:
+				return NAME5_EDEFAULT == null ? name5 != null : !NAME5_EDEFAULT.equals(name5);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,8 +151,8 @@ public class Tool_frameworkImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Nametool: ");
-		result.append(nametool);
+		result.append(" (Name5: ");
+		result.append(name5);
 		result.append(')');
 		return result.toString();
 	}
