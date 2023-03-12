@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}</li>
- *   <li>{@link devops2.Command#getParameters <em>Parameters</em>}</li>
  *   <li>{@link devops2.Command#getDescription <em>Description</em>}</li>
  *   <li>{@link devops2.Command#getTool <em>Tool</em>}</li>
+ *   <li>{@link devops2.Command#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see devops2.Devops2Package#getCommand()

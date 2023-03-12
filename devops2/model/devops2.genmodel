@@ -27,9 +27,9 @@
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Command">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Command/command_parameter"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Parameters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference devops2.ecore#//Command/tool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Command/Parameters"/>
     </genClasses>
     <genClasses ecoreClass="devops2.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute devops2.ecore#//Parameter/Key"/>

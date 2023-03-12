@@ -3,7 +3,7 @@
   <when Name4="Push" Trigger="Push"/>
   <job Name1="install">
     <step>
-      <command Parameters="install" Description="install">
+      <command Description="Instal" Parameters="install">
         <tool href="Yarn.devops2#/"/>
       </command>
       <artifact href="Code.devops2#/"/>
@@ -11,26 +11,26 @@
   </job>
   <job Name1="Test">
     <step Name2="Test">
-      <command Parameters="test" Description="Test">
+      <command Description="Test" Parameters="test">
         <tool href="Yarn.devops2#/"/>
       </command>
     </step>
   </job>
   <job Name1="Build">
     <step Name2="Build">
-      <command Parameters="build" Description="Build">
+      <command Description="Build" Parameters="build">
         <tool href="Yarn.devops2#/"/>
       </command>
     </step>
   </job>
   <job Name1="Deploy">
     <step>
-      <command Parameters="remote add heroku https://heroku:${{ HEROKU_API_KEY }}@git.heroku.com/${{ HEROKU_APP_NAME }}.git" Description="Remode add">
+      <command Description="Remode add" Parameters="remote add heroku https://heroku:${{ HEROKU_API_KEY }}@git.heroku.com/${{ HEROKU_APP_NAME }}.git">
         <command_parameter href="HEROKU_API_KEY.devops2#/"/>
         <command_parameter href="HEROKU_NAME.devops2#/"/>
         <tool href="Git.devops2#/"/>
       </command>
-      <command Parameters="push heroku HEAD:master -f" Description="Push">
+      <command Description="Push" Parameters="push heroku HEAD:master -f">
         <tool href="Git.devops2#/"/>
       </command>
     </step>

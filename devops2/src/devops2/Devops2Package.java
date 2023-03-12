@@ -288,22 +288,13 @@ public interface Devops2Package extends EPackage {
 	int COMMAND__COMMAND_PARAMETER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMAND__PARAMETERS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__DESCRIPTION = 2;
+	int COMMAND__DESCRIPTION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Tool</b></em>' reference.
@@ -312,7 +303,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__TOOL = 3;
+	int COMMAND__TOOL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMAND__PARAMETERS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Command</em>' class.

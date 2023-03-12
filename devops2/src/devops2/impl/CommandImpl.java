@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link devops2.impl.CommandImpl#getCommand_parameter <em>Command parameter</em>}</li>
- *   <li>{@link devops2.impl.CommandImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link devops2.impl.CommandImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link devops2.impl.CommandImpl#getTool <em>Tool</em>}</li>
+ *   <li>{@link devops2.impl.CommandImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,26 +43,6 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	 * @ordered
 	 */
 	protected EList<Parameter> command_parameter;
-
-	/**
-	 * The default value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PARAMETERS_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected String parameters = PARAMETERS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -93,6 +73,26 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	 * @ordered
 	 */
 	protected Tool_framework tool;
+
+	/**
+	 * The default value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PARAMETERS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected String parameters = PARAMETERS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -215,13 +215,13 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
 				return getCommand_parameter();
-			case Devops2Package.COMMAND__PARAMETERS:
-				return getParameters();
 			case Devops2Package.COMMAND__DESCRIPTION:
 				return getDescription();
 			case Devops2Package.COMMAND__TOOL:
 				if (resolve) return getTool();
 				return basicGetTool();
+			case Devops2Package.COMMAND__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,14 +239,14 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 				getCommand_parameter().clear();
 				getCommand_parameter().addAll((Collection<? extends Parameter>)newValue);
 				return;
-			case Devops2Package.COMMAND__PARAMETERS:
-				setParameters((String)newValue);
-				return;
 			case Devops2Package.COMMAND__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
 			case Devops2Package.COMMAND__TOOL:
 				setTool((Tool_framework)newValue);
+				return;
+			case Devops2Package.COMMAND__PARAMETERS:
+				setParameters((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,14 +263,14 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
 				getCommand_parameter().clear();
 				return;
-			case Devops2Package.COMMAND__PARAMETERS:
-				setParameters(PARAMETERS_EDEFAULT);
-				return;
 			case Devops2Package.COMMAND__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case Devops2Package.COMMAND__TOOL:
 				setTool((Tool_framework)null);
+				return;
+			case Devops2Package.COMMAND__PARAMETERS:
+				setParameters(PARAMETERS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -286,12 +286,12 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 		switch (featureID) {
 			case Devops2Package.COMMAND__COMMAND_PARAMETER:
 				return command_parameter != null && !command_parameter.isEmpty();
-			case Devops2Package.COMMAND__PARAMETERS:
-				return PARAMETERS_EDEFAULT == null ? parameters != null : !PARAMETERS_EDEFAULT.equals(parameters);
 			case Devops2Package.COMMAND__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case Devops2Package.COMMAND__TOOL:
 				return tool != null;
+			case Devops2Package.COMMAND__PARAMETERS:
+				return PARAMETERS_EDEFAULT == null ? parameters != null : !PARAMETERS_EDEFAULT.equals(parameters);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -306,10 +306,10 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Parameters: ");
-		result.append(parameters);
-		result.append(", Description: ");
+		result.append(" (Description: ");
 		result.append(description);
+		result.append(", Parameters: ");
+		result.append(parameters);
 		result.append(')');
 		return result.toString();
 	}

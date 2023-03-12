@@ -329,7 +329,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EAttribute getCommand_Parameters() {
-		return (EAttribute)commandEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)commandEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -338,7 +338,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EAttribute getCommand_Description() {
-		return (EAttribute)commandEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)commandEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -347,7 +347,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EReference getCommand_Tool() {
-		return (EReference)commandEClass.getEStructuralFeatures().get(3);
+		return (EReference)commandEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -508,9 +508,9 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 
 		commandEClass = createEClass(COMMAND);
 		createEReference(commandEClass, COMMAND__COMMAND_PARAMETER);
-		createEAttribute(commandEClass, COMMAND__PARAMETERS);
 		createEAttribute(commandEClass, COMMAND__DESCRIPTION);
 		createEReference(commandEClass, COMMAND__TOOL);
+		createEAttribute(commandEClass, COMMAND__PARAMETERS);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__KEY);
@@ -583,9 +583,9 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 
 		initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCommand_Command_parameter(), this.getParameter(), null, "command_parameter", null, 0, -1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommand_Parameters(), ecorePackage.getEString(), "Parameters", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCommand_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommand_Tool(), this.getTool_framework(), null, "tool", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommand_Parameters(), ecorePackage.getEString(), "Parameters", null, 0, 1, Command.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Key(), ecorePackage.getEString(), "Key", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
