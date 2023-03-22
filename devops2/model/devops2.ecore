@@ -11,35 +11,31 @@
         upperBound="-1" eType="#//Tool_framework"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Job">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="step" upperBound="-1" eType="#//Step"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Job"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tool_framework_job" upperBound="-1"
         eType="#//Tool_framework"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Step">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition_job" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
+        eType="#//Artifact"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
         eType="#//Command" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step_parameter" upperBound="-1"
-        eType="#//Parameter"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
-        eType="#//Artifact"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tool_framework" upperBound="-1"
-        eType="#//Tool_framework"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="depends" upperBound="-1"
-        eType="#//Step"/>
+        eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ifthenelse" eType="#//IfThenElse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="failure" eType="#//Failure"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="command_parameter" upperBound="-1"
-        eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="envirnoment_c" upperBound="-1"
+        eType="#//Environment"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tool" eType="#//Tool_framework"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -55,5 +51,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="Tool_framework">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name5" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parallel_job" eSuperTypes="#//Job"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IfThenElse">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="if" upperBound="-1" eType="#//Command"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="else" upperBound="-1" eType="#//Command"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Failure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Allow_faillure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
 </ecore:EPackage>
