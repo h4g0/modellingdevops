@@ -12,20 +12,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Job">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Job"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depends" upperBound="-1"
+        eType="#//Job"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tool_framework_job" upperBound="-1"
         eType="#//Tool_framework"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition_job" upperBound="-1"
         eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1"
         eType="#//Artifact"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
         eType="#//Command" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="step_parameter" upperBound="-1"
         eType="#//Environment"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ifthenelse" eType="#//IfThenElse"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="failure" eType="#//Failure"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Allow_faillure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1"
+        eType="#//Artifact" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command">
     <eStructuralFeatures xsi:type="ecore:EReference" name="envirnoment_c" upperBound="-1"
@@ -60,8 +62,5 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" upperBound="-1" eType="#//Command"
         containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Failure">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Allow_faillure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>
