@@ -58,13 +58,12 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 		switch (eClass.getClassifierID()) {
 			case Devops2Package.PIPELINE: return createPipeline();
 			case Devops2Package.JOB: return createJob();
-			case Devops2Package.STEP: return createStep();
 			case Devops2Package.COMMAND: return createCommand();
-			case Devops2Package.PARAMETER: return createParameter();
+			case Devops2Package.ENVIRONMENT: return createEnvironment();
 			case Devops2Package.WHEN: return createWhen();
 			case Devops2Package.ARTIFACT: return createArtifact();
 			case Devops2Package.TOOL_FRAMEWORK: return createTool_framework();
-			case Devops2Package.PARALLEL_JOB: return createParallel_job();
+			case Devops2Package.IF_THEN_ELSE: return createIfThenElse();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,16 +94,6 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Step createStep() {
-		StepImpl step = new StepImpl();
-		return step;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Command createCommand() {
 		CommandImpl command = new CommandImpl();
 		return command;
@@ -115,9 +104,9 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Parameter createParameter() {
-		ParameterImpl parameter = new ParameterImpl();
-		return parameter;
+	public Environment createEnvironment() {
+		EnvironmentImpl environment = new EnvironmentImpl();
+		return environment;
 	}
 
 	/**
@@ -155,9 +144,9 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Parallel_job createParallel_job() {
-		Parallel_jobImpl parallel_job = new Parallel_jobImpl();
-		return parallel_job;
+	public IfThenElse createIfThenElse() {
+		IfThenElseImpl ifThenElse = new IfThenElseImpl();
+		return ifThenElse;
 	}
 
 	/**

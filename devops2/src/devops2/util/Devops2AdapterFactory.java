@@ -76,16 +76,12 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 				return createJobAdapter();
 			}
 			@Override
-			public Adapter caseStep(Step object) {
-				return createStepAdapter();
-			}
-			@Override
 			public Adapter caseCommand(Command object) {
 				return createCommandAdapter();
 			}
 			@Override
-			public Adapter caseParameter(Parameter object) {
-				return createParameterAdapter();
+			public Adapter caseEnvironment(Environment object) {
+				return createEnvironmentAdapter();
 			}
 			@Override
 			public Adapter caseWhen(When object) {
@@ -100,8 +96,8 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 				return createTool_frameworkAdapter();
 			}
 			@Override
-			public Adapter caseParallel_job(Parallel_job object) {
-				return createParallel_jobAdapter();
+			public Adapter caseIfThenElse(IfThenElse object) {
+				return createIfThenElseAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -152,20 +148,6 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Step <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see devops2.Step
-	 * @generated
-	 */
-	public Adapter createStepAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link devops2.Command <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -180,16 +162,16 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Parameter <em>Parameter</em>}'.
+	 * Creates a new adapter for an object of class '{@link devops2.Environment <em>Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see devops2.Parameter
+	 * @see devops2.Environment
 	 * @generated
 	 */
-	public Adapter createParameterAdapter() {
+	public Adapter createEnvironmentAdapter() {
 		return null;
 	}
 
@@ -236,16 +218,16 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link devops2.Parallel_job <em>Parallel job</em>}'.
+	 * Creates a new adapter for an object of class '{@link devops2.IfThenElse <em>If Then Else</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see devops2.Parallel_job
+	 * @see devops2.IfThenElse
 	 * @generated
 	 */
-	public Adapter createParallel_jobAdapter() {
+	public Adapter createIfThenElseAdapter() {
 		return null;
 	}
 

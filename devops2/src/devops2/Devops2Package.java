@@ -132,31 +132,22 @@ public interface Devops2Package extends EPackage {
 	int JOB = 1;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB__STEP = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__NAME1 = 1;
+	int JOB__NAME1 = 0;
 
 	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * The feature id for the '<em><b>Depends</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__USES = 2;
+	int JOB__DEPENDS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Tool framework job</b></em>' reference list.
@@ -165,7 +156,61 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__TOOL_FRAMEWORK_JOB = 3;
+	int JOB__TOOL_FRAMEWORK_JOB = 2;
+
+	/**
+	 * The feature id for the '<em><b>Output</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__OUTPUT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__COMMAND = 4;
+
+	/**
+	 * The feature id for the '<em><b>Job parameter</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__JOB_PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Ifthenelse</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__IFTHENELSE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Allow faillure</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__ALLOW_FAILLURE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__INPUT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Job</em>' class.
@@ -174,7 +219,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB_FEATURE_COUNT = 4;
+	int JOB_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Job</em>' class.
@@ -187,88 +232,6 @@ public interface Devops2Package extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link devops2.impl.StepImpl <em>Step</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see devops2.impl.StepImpl
-	 * @see devops2.impl.Devops2PackageImpl#getStep()
-	 * @generated
-	 */
-	int STEP = 2;
-
-	/**
-	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__COMMAND = 0;
-
-	/**
-	 * The feature id for the '<em><b>Step parameter</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__STEP_PARAMETER = 1;
-
-	/**
-	 * The feature id for the '<em><b>Artifact</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__ARTIFACT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Tool framework</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__TOOL_FRAMEWORK = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name2</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__NAME2 = 4;
-
-	/**
-	 * The feature id for the '<em><b>Depends</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP__DEPENDS = 5;
-
-	/**
-	 * The number of structural features of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Step</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STEP_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link devops2.impl.CommandImpl <em>Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,16 +239,16 @@ public interface Devops2Package extends EPackage {
 	 * @see devops2.impl.Devops2PackageImpl#getCommand()
 	 * @generated
 	 */
-	int COMMAND = 3;
+	int COMMAND = 2;
 
 	/**
-	 * The feature id for the '<em><b>Command parameter</b></em>' reference list.
+	 * The feature id for the '<em><b>Envirnoment c</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND__COMMAND_PARAMETER = 0;
+	int COMMAND__ENVIRNOMENT_C = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -333,14 +296,14 @@ public interface Devops2Package extends EPackage {
 	int COMMAND_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link devops2.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * The meta object id for the '{@link devops2.impl.EnvironmentImpl <em>Environment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see devops2.impl.ParameterImpl
-	 * @see devops2.impl.Devops2PackageImpl#getParameter()
+	 * @see devops2.impl.EnvironmentImpl
+	 * @see devops2.impl.Devops2PackageImpl#getEnvironment()
 	 * @generated
 	 */
-	int PARAMETER = 4;
+	int ENVIRONMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -349,7 +312,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__KEY = 0;
+	int ENVIRONMENT__KEY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -358,26 +321,25 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__VALUE = 1;
+	int ENVIRONMENT__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 2;
+	int ENVIRONMENT_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Parameter</em>' class.
+	 * The number of operations of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = 0;
-
+	int ENVIRONMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link devops2.impl.WhenImpl <em>When</em>}' class.
@@ -387,7 +349,7 @@ public interface Devops2Package extends EPackage {
 	 * @see devops2.impl.Devops2PackageImpl#getWhen()
 	 * @generated
 	 */
-	int WHEN = 5;
+	int WHEN = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name4</b></em>' attribute.
@@ -442,7 +404,7 @@ public interface Devops2Package extends EPackage {
 	 * @see devops2.impl.Devops2PackageImpl#getArtifact()
 	 * @generated
 	 */
-	int ARTIFACT = 6;
+	int ARTIFACT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name3</b></em>' attribute.
@@ -479,7 +441,7 @@ public interface Devops2Package extends EPackage {
 	 * @see devops2.impl.Devops2PackageImpl#getTool_framework()
 	 * @generated
 	 */
-	int TOOL_FRAMEWORK = 7;
+	int TOOL_FRAMEWORK = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name5</b></em>' attribute.
@@ -509,68 +471,86 @@ public interface Devops2Package extends EPackage {
 	int TOOL_FRAMEWORK_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link devops2.impl.Parallel_jobImpl <em>Parallel job</em>}' class.
+	 * The meta object id for the '{@link devops2.impl.IfThenElseImpl <em>If Then Else</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see devops2.impl.Parallel_jobImpl
-	 * @see devops2.impl.Devops2PackageImpl#getParallel_job()
+	 * @see devops2.impl.IfThenElseImpl
+	 * @see devops2.impl.Devops2PackageImpl#getIfThenElse()
 	 * @generated
 	 */
-	int PARALLEL_JOB = 8;
+	int IF_THEN_ELSE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Step</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB__STEP = JOB__STEP;
+	int IF_THEN_ELSE__CONDITION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name1</b></em>' attribute.
+	 * The feature id for the '<em><b>If</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB__NAME1 = JOB__NAME1;
+	int IF_THEN_ELSE__IF = 1;
 
 	/**
-	 * The feature id for the '<em><b>Uses</b></em>' reference list.
+	 * The feature id for the '<em><b>Else</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB__USES = JOB__USES;
+	int IF_THEN_ELSE__ELSE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Tool framework job</b></em>' reference list.
+	 * The feature id for the '<em><b>Ifelse</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB__TOOL_FRAMEWORK_JOB = JOB__TOOL_FRAMEWORK_JOB;
+	int IF_THEN_ELSE__IFELSE = 3;
 
 	/**
-	 * The number of structural features of the '<em>Parallel job</em>' class.
+	 * The feature id for the '<em><b>Elseif</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB_FEATURE_COUNT = JOB_FEATURE_COUNT + 0;
+	int IF_THEN_ELSE__ELSEIF = 4;
 
 	/**
-	 * The number of operations of the '<em>Parallel job</em>' class.
+	 * The feature id for the '<em><b>Environment if</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARALLEL_JOB_OPERATION_COUNT = JOB_OPERATION_COUNT + 0;
+	int IF_THEN_ELSE__ENVIRONMENT_IF = 5;
+
+	/**
+	 * The number of structural features of the '<em>If Then Else</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_THEN_ELSE_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>If Then Else</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_THEN_ELSE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Pipeline <em>Pipeline</em>}'.
@@ -637,17 +617,6 @@ public interface Devops2Package extends EPackage {
 	EClass getJob();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link devops2.Job#getStep <em>Step</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Step</em>'.
-	 * @see devops2.Job#getStep()
-	 * @see #getJob()
-	 * @generated
-	 */
-	EReference getJob_Step();
-
-	/**
 	 * Returns the meta object for the attribute '{@link devops2.Job#getName1 <em>Name1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -659,15 +628,15 @@ public interface Devops2Package extends EPackage {
 	EAttribute getJob_Name1();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Job#getUses <em>Uses</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Job#getDepends <em>Depends</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Uses</em>'.
-	 * @see devops2.Job#getUses()
+	 * @return the meta object for the reference list '<em>Depends</em>'.
+	 * @see devops2.Job#getDepends()
 	 * @see #getJob()
 	 * @generated
 	 */
-	EReference getJob_Uses();
+	EReference getJob_Depends();
 
 	/**
 	 * Returns the meta object for the reference list '{@link devops2.Job#getTool_framework_job <em>Tool framework job</em>}'.
@@ -681,80 +650,70 @@ public interface Devops2Package extends EPackage {
 	EReference getJob_Tool_framework_job();
 
 	/**
-	 * Returns the meta object for class '{@link devops2.Step <em>Step</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Job#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Step</em>'.
-	 * @see devops2.Step
+	 * @return the meta object for the reference list '<em>Output</em>'.
+	 * @see devops2.Job#getOutput()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EClass getStep();
+	EReference getJob_Output();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link devops2.Step#getCommand <em>Command</em>}'.
+	 * Returns the meta object for the containment reference list '{@link devops2.Job#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Command</em>'.
-	 * @see devops2.Step#getCommand()
-	 * @see #getStep()
+	 * @see devops2.Job#getCommand()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EReference getStep_Command();
+	EReference getJob_Command();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Step#getStep_parameter <em>Step parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Job#getJob_parameter <em>Job parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Step parameter</em>'.
-	 * @see devops2.Step#getStep_parameter()
-	 * @see #getStep()
+	 * @return the meta object for the reference list '<em>Job parameter</em>'.
+	 * @see devops2.Job#getJob_parameter()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EReference getStep_Step_parameter();
+	EReference getJob_Job_parameter();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Step#getArtifact <em>Artifact</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Job#getIfthenelse <em>Ifthenelse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Artifact</em>'.
-	 * @see devops2.Step#getArtifact()
-	 * @see #getStep()
+	 * @return the meta object for the reference list '<em>Ifthenelse</em>'.
+	 * @see devops2.Job#getIfthenelse()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EReference getStep_Artifact();
+	EReference getJob_Ifthenelse();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Step#getTool_framework <em>Tool framework</em>}'.
+	 * Returns the meta object for the attribute '{@link devops2.Job#isAllow_faillure <em>Allow faillure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Tool framework</em>'.
-	 * @see devops2.Step#getTool_framework()
-	 * @see #getStep()
+	 * @return the meta object for the attribute '<em>Allow faillure</em>'.
+	 * @see devops2.Job#isAllow_faillure()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EReference getStep_Tool_framework();
+	EAttribute getJob_Allow_faillure();
 
 	/**
-	 * Returns the meta object for the attribute '{@link devops2.Step#getName2 <em>Name2</em>}'.
+	 * Returns the meta object for the containment reference list '{@link devops2.Job#getInput <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name2</em>'.
-	 * @see devops2.Step#getName2()
-	 * @see #getStep()
+	 * @return the meta object for the containment reference list '<em>Input</em>'.
+	 * @see devops2.Job#getInput()
+	 * @see #getJob()
 	 * @generated
 	 */
-	EAttribute getStep_Name2();
-
-	/**
-	 * Returns the meta object for the reference list '{@link devops2.Step#getDepends <em>Depends</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Depends</em>'.
-	 * @see devops2.Step#getDepends()
-	 * @see #getStep()
-	 * @generated
-	 */
-	EReference getStep_Depends();
+	EReference getJob_Input();
 
 	/**
 	 * Returns the meta object for class '{@link devops2.Command <em>Command</em>}'.
@@ -767,15 +726,15 @@ public interface Devops2Package extends EPackage {
 	EClass getCommand();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}'.
+	 * Returns the meta object for the reference list '{@link devops2.Command#getEnvirnoment_c <em>Envirnoment c</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Command parameter</em>'.
-	 * @see devops2.Command#getCommand_parameter()
+	 * @return the meta object for the reference list '<em>Envirnoment c</em>'.
+	 * @see devops2.Command#getEnvirnoment_c()
 	 * @see #getCommand()
 	 * @generated
 	 */
-	EReference getCommand_Command_parameter();
+	EReference getCommand_Envirnoment_c();
 
 	/**
 	 * Returns the meta object for the attribute '{@link devops2.Command#getParameters <em>Parameters</em>}'.
@@ -787,6 +746,38 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCommand_Parameters();
+
+	/**
+	 * Returns the meta object for class '{@link devops2.Environment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Environment</em>'.
+	 * @see devops2.Environment
+	 * @generated
+	 */
+	EClass getEnvironment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.Environment#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see devops2.Environment#getKey()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EAttribute getEnvironment_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.Environment#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see devops2.Environment#getValue()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EAttribute getEnvironment_Value();
 
 	/**
 	 * Returns the meta object for the attribute '{@link devops2.Command#getDescription <em>Description</em>}'.
@@ -809,38 +800,6 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getCommand_Tool();
-
-	/**
-	 * Returns the meta object for class '{@link devops2.Parameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameter</em>'.
-	 * @see devops2.Parameter
-	 * @generated
-	 */
-	EClass getParameter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link devops2.Parameter#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see devops2.Parameter#getKey()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Key();
-
-	/**
-	 * Returns the meta object for the attribute '{@link devops2.Parameter#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see devops2.Parameter#getValue()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Value();
 
 	/**
 	 * Returns the meta object for class '{@link devops2.When <em>When</em>}'.
@@ -928,14 +887,80 @@ public interface Devops2Package extends EPackage {
 	EAttribute getTool_framework_Name5();
 
 	/**
-	 * Returns the meta object for class '{@link devops2.Parallel_job <em>Parallel job</em>}'.
+	 * Returns the meta object for class '{@link devops2.IfThenElse <em>If Then Else</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parallel job</em>'.
-	 * @see devops2.Parallel_job
+	 * @return the meta object for class '<em>If Then Else</em>'.
+	 * @see devops2.IfThenElse
 	 * @generated
 	 */
-	EClass getParallel_job();
+	EClass getIfThenElse();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.IfThenElse#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see devops2.IfThenElse#getCondition()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EAttribute getIfThenElse_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.IfThenElse#getIf <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>If</em>'.
+	 * @see devops2.IfThenElse#getIf()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EReference getIfThenElse_If();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.IfThenElse#getElse <em>Else</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Else</em>'.
+	 * @see devops2.IfThenElse#getElse()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EReference getIfThenElse_Else();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.IfThenElse#getIfelse <em>Ifelse</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ifelse</em>'.
+	 * @see devops2.IfThenElse#getIfelse()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EReference getIfThenElse_Ifelse();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.IfThenElse#getElseif <em>Elseif</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Elseif</em>'.
+	 * @see devops2.IfThenElse#getElseif()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EReference getIfThenElse_Elseif();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.IfThenElse#getEnvironment_if <em>Environment if</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Environment if</em>'.
+	 * @see devops2.IfThenElse#getEnvironment_if()
+	 * @see #getIfThenElse()
+	 * @generated
+	 */
+	EReference getIfThenElse_Environment_if();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1007,13 +1032,6 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass JOB = eINSTANCE.getJob();
 		/**
-		 * The meta object literal for the '<em><b>Step</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference JOB__STEP = eINSTANCE.getJob_Step();
-		/**
 		 * The meta object literal for the '<em><b>Name1</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1021,12 +1039,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute JOB__NAME1 = eINSTANCE.getJob_Name1();
 		/**
-		 * The meta object literal for the '<em><b>Uses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference JOB__USES = eINSTANCE.getJob_Uses();
+		EReference JOB__DEPENDS = eINSTANCE.getJob_Depends();
 		/**
 		 * The meta object literal for the '<em><b>Tool framework job</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1035,56 +1053,47 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference JOB__TOOL_FRAMEWORK_JOB = eINSTANCE.getJob_Tool_framework_job();
 		/**
-		 * The meta object literal for the '{@link devops2.impl.StepImpl <em>Step</em>}' class.
+		 * The meta object literal for the '<em><b>Output</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see devops2.impl.StepImpl
-		 * @see devops2.impl.Devops2PackageImpl#getStep()
 		 * @generated
 		 */
-		EClass STEP = eINSTANCE.getStep();
+		EReference JOB__OUTPUT = eINSTANCE.getJob_Output();
 		/**
 		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__COMMAND = eINSTANCE.getStep_Command();
+		EReference JOB__COMMAND = eINSTANCE.getJob_Command();
 		/**
-		 * The meta object literal for the '<em><b>Step parameter</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Job parameter</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__STEP_PARAMETER = eINSTANCE.getStep_Step_parameter();
+		EReference JOB__JOB_PARAMETER = eINSTANCE.getJob_Job_parameter();
 		/**
-		 * The meta object literal for the '<em><b>Artifact</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Ifthenelse</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__ARTIFACT = eINSTANCE.getStep_Artifact();
+		EReference JOB__IFTHENELSE = eINSTANCE.getJob_Ifthenelse();
 		/**
-		 * The meta object literal for the '<em><b>Tool framework</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Allow faillure</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STEP__TOOL_FRAMEWORK = eINSTANCE.getStep_Tool_framework();
+		EAttribute JOB__ALLOW_FAILLURE = eINSTANCE.getJob_Allow_faillure();
 		/**
-		 * The meta object literal for the '<em><b>Name2</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Input</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STEP__NAME2 = eINSTANCE.getStep_Name2();
-		/**
-		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STEP__DEPENDS = eINSTANCE.getStep_Depends();
+		EReference JOB__INPUT = eINSTANCE.getJob_Input();
 		/**
 		 * The meta object literal for the '{@link devops2.impl.CommandImpl <em>Command</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1095,12 +1104,12 @@ public interface Devops2Package extends EPackage {
 		 */
 		EClass COMMAND = eINSTANCE.getCommand();
 		/**
-		 * The meta object literal for the '<em><b>Command parameter</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Envirnoment c</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMMAND__COMMAND_PARAMETER = eINSTANCE.getCommand_Command_parameter();
+		EReference COMMAND__ENVIRNOMENT_C = eINSTANCE.getCommand_Envirnoment_c();
 		/**
 		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -1108,6 +1117,29 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMMAND__PARAMETERS = eINSTANCE.getCommand_Parameters();
+		/**
+		 * The meta object literal for the '{@link devops2.impl.EnvironmentImpl <em>Environment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see devops2.impl.EnvironmentImpl
+		 * @see devops2.impl.Devops2PackageImpl#getEnvironment()
+		 * @generated
+		 */
+		EClass ENVIRONMENT = eINSTANCE.getEnvironment();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENVIRONMENT__KEY = eINSTANCE.getEnvironment_Key();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENVIRONMENT__VALUE = eINSTANCE.getEnvironment_Value();
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
@@ -1122,29 +1154,6 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EReference COMMAND__TOOL = eINSTANCE.getCommand_Tool();
-		/**
-		 * The meta object literal for the '{@link devops2.impl.ParameterImpl <em>Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see devops2.impl.ParameterImpl
-		 * @see devops2.impl.Devops2PackageImpl#getParameter()
-		 * @generated
-		 */
-		EClass PARAMETER = eINSTANCE.getParameter();
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__KEY = eINSTANCE.getParameter_Key();
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 		/**
 		 * The meta object literal for the '{@link devops2.impl.WhenImpl <em>When</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1208,14 +1217,56 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute TOOL_FRAMEWORK__NAME5 = eINSTANCE.getTool_framework_Name5();
 		/**
-		 * The meta object literal for the '{@link devops2.impl.Parallel_jobImpl <em>Parallel job</em>}' class.
+		 * The meta object literal for the '{@link devops2.impl.IfThenElseImpl <em>If Then Else</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see devops2.impl.Parallel_jobImpl
-		 * @see devops2.impl.Devops2PackageImpl#getParallel_job()
+		 * @see devops2.impl.IfThenElseImpl
+		 * @see devops2.impl.Devops2PackageImpl#getIfThenElse()
 		 * @generated
 		 */
-		EClass PARALLEL_JOB = eINSTANCE.getParallel_job();
+		EClass IF_THEN_ELSE = eINSTANCE.getIfThenElse();
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IF_THEN_ELSE__CONDITION = eINSTANCE.getIfThenElse_Condition();
+		/**
+		 * The meta object literal for the '<em><b>If</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_THEN_ELSE__IF = eINSTANCE.getIfThenElse_If();
+		/**
+		 * The meta object literal for the '<em><b>Else</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_THEN_ELSE__ELSE = eINSTANCE.getIfThenElse_Else();
+		/**
+		 * The meta object literal for the '<em><b>Ifelse</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_THEN_ELSE__IFELSE = eINSTANCE.getIfThenElse_Ifelse();
+		/**
+		 * The meta object literal for the '<em><b>Elseif</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_THEN_ELSE__ELSEIF = eINSTANCE.getIfThenElse_Elseif();
+		/**
+		 * The meta object literal for the '<em><b>Environment if</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_THEN_ELSE__ENVIRONMENT_IF = eINSTANCE.getIfThenElse_Environment_if();
 
 	}
 

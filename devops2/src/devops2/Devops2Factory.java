@@ -40,15 +40,6 @@ public interface Devops2Factory extends EFactory {
 	Job createJob();
 
 	/**
-	 * Returns a new object of class '<em>Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Step</em>'.
-	 * @generated
-	 */
-	Step createStep();
-
-	/**
 	 * Returns a new object of class '<em>Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,13 +49,13 @@ public interface Devops2Factory extends EFactory {
 	Command createCommand();
 
 	/**
-	 * Returns a new object of class '<em>Parameter</em>'.
+	 * Returns a new object of class '<em>Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter</em>'.
+	 * @return a new object of class '<em>Environment</em>'.
 	 * @generated
 	 */
-	Parameter createParameter();
+	Environment createEnvironment();
 
 	/**
 	 * Returns a new object of class '<em>When</em>'.
@@ -94,13 +85,13 @@ public interface Devops2Factory extends EFactory {
 	Tool_framework createTool_framework();
 
 	/**
-	 * Returns a new object of class '<em>Parallel job</em>'.
+	 * Returns a new object of class '<em>If Then Else</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parallel job</em>'.
+	 * @return a new object of class '<em>If Then Else</em>'.
 	 * @generated
 	 */
-	Parallel_job createParallel_job();
+	IfThenElse createIfThenElse();
 
 	/**
 	 * Returns the package supported by this factory.

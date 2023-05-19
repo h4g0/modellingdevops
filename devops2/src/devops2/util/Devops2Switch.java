@@ -78,21 +78,15 @@ public class Devops2Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Devops2Package.STEP: {
-				Step step = (Step)theEObject;
-				T result = caseStep(step);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case Devops2Package.COMMAND: {
 				Command command = (Command)theEObject;
 				T result = caseCommand(command);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Devops2Package.PARAMETER: {
-				Parameter parameter = (Parameter)theEObject;
-				T result = caseParameter(parameter);
+			case Devops2Package.ENVIRONMENT: {
+				Environment environment = (Environment)theEObject;
+				T result = caseEnvironment(environment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,10 +108,9 @@ public class Devops2Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Devops2Package.PARALLEL_JOB: {
-				Parallel_job parallel_job = (Parallel_job)theEObject;
-				T result = caseParallel_job(parallel_job);
-				if (result == null) result = caseJob(parallel_job);
+			case Devops2Package.IF_THEN_ELSE: {
+				IfThenElse ifThenElse = (IfThenElse)theEObject;
+				T result = caseIfThenElse(ifThenElse);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,21 +149,6 @@ public class Devops2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Step</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Step</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStep(Step object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -186,17 +164,17 @@ public class Devops2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Environment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Environment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseParameter(Parameter object) {
+	public T caseEnvironment(Environment object) {
 		return null;
 	}
 
@@ -246,17 +224,17 @@ public class Devops2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parallel job</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>If Then Else</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parallel job</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>If Then Else</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseParallel_job(Parallel_job object) {
+	public T caseIfThenElse(IfThenElse object) {
 		return null;
 	}
 

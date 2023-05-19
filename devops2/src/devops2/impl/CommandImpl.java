@@ -4,8 +4,7 @@ package devops2.impl;
 
 import devops2.Command;
 import devops2.Devops2Package;
-import devops2.Parameter;
-
+import devops2.Environment;
 import devops2.Tool_framework;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -25,7 +24,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link devops2.impl.CommandImpl#getCommand_parameter <em>Command parameter</em>}</li>
+ *   <li>{@link devops2.impl.CommandImpl#getEnvirnoment_c <em>Envirnoment c</em>}</li>
  *   <li>{@link devops2.impl.CommandImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link devops2.impl.CommandImpl#getTool <em>Tool</em>}</li>
  *   <li>{@link devops2.impl.CommandImpl#getParameters <em>Parameters</em>}</li>
@@ -35,14 +34,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class CommandImpl extends MinimalEObjectImpl.Container implements Command {
 	/**
-	 * The cached value of the '{@link #getCommand_parameter() <em>Command parameter</em>}' reference list.
+	 * The cached value of the '{@link #getEnvirnoment_c() <em>Envirnoment c</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCommand_parameter()
+	 * @see #getEnvirnoment_c()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> command_parameter;
+	protected EList<Environment> envirnoment_c;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -118,11 +117,11 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getCommand_parameter() {
-		if (command_parameter == null) {
-			command_parameter = new EObjectResolvingEList<Parameter>(Parameter.class, this, Devops2Package.COMMAND__COMMAND_PARAMETER);
+	public EList<Environment> getEnvirnoment_c() {
+		if (envirnoment_c == null) {
+			envirnoment_c = new EObjectResolvingEList<Environment>(Environment.class, this, Devops2Package.COMMAND__ENVIRNOMENT_C);
 		}
-		return command_parameter;
+		return envirnoment_c;
 	}
 
 	/**
@@ -213,8 +212,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				return getCommand_parameter();
+			case Devops2Package.COMMAND__ENVIRNOMENT_C:
+				return getEnvirnoment_c();
 			case Devops2Package.COMMAND__DESCRIPTION:
 				return getDescription();
 			case Devops2Package.COMMAND__TOOL:
@@ -235,9 +234,9 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				getCommand_parameter().clear();
-				getCommand_parameter().addAll((Collection<? extends Parameter>)newValue);
+			case Devops2Package.COMMAND__ENVIRNOMENT_C:
+				getEnvirnoment_c().clear();
+				getEnvirnoment_c().addAll((Collection<? extends Environment>)newValue);
 				return;
 			case Devops2Package.COMMAND__DESCRIPTION:
 				setDescription((String)newValue);
@@ -260,8 +259,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				getCommand_parameter().clear();
+			case Devops2Package.COMMAND__ENVIRNOMENT_C:
+				getEnvirnoment_c().clear();
 				return;
 			case Devops2Package.COMMAND__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -284,8 +283,8 @@ public class CommandImpl extends MinimalEObjectImpl.Container implements Command
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Devops2Package.COMMAND__COMMAND_PARAMETER:
-				return command_parameter != null && !command_parameter.isEmpty();
+			case Devops2Package.COMMAND__ENVIRNOMENT_C:
+				return envirnoment_c != null && !envirnoment_c.isEmpty();
 			case Devops2Package.COMMAND__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case Devops2Package.COMMAND__TOOL:

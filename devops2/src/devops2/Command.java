@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link devops2.Command#getCommand_parameter <em>Command parameter</em>}</li>
+ *   <li>{@link devops2.Command#getEnvirnoment_c <em>Envirnoment c</em>}</li>
  *   <li>{@link devops2.Command#getDescription <em>Description</em>}</li>
  *   <li>{@link devops2.Command#getTool <em>Tool</em>}</li>
  *   <li>{@link devops2.Command#getParameters <em>Parameters</em>}</li>
@@ -26,16 +26,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Command extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Command parameter</b></em>' reference list.
-	 * The list contents are of type {@link devops2.Parameter}.
+	 * Returns the value of the '<em><b>Envirnoment c</b></em>' reference list.
+	 * The list contents are of type {@link devops2.Environment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Command parameter</em>' reference list.
-	 * @see devops2.Devops2Package#getCommand_Command_parameter()
+	 * @return the value of the '<em>Envirnoment c</em>' reference list.
+	 * @see devops2.Devops2Package#getCommand_Envirnoment_c()
 	 * @model
 	 * @generated
 	 */
-	EList<Parameter> getCommand_parameter();
+	EList<Environment> getEnvirnoment_c();
 
 	/**
 	 * Returns the value of the '<em><b>Parameters</b></em>' attribute.
