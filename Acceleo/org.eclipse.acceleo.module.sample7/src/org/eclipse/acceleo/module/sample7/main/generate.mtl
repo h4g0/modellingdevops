@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/devops2')]
+
+
+[template public generateElement(aPipeline : Pipeline)]
+[comment @main/]
+[file ('' + aPipeline.Name0 + '.yml', false, 'UTF-8')]
+[aPipeline.Name0/]:
+jobs:
+[for (j: Job | aPipeline.job)]
+	[generateJob(j)/]
+[/for]
+[/file]
+[/template]
+
+
+[template public generateJob(aJob : Job)]
+[aJob.Name1/]:
+[/template]
+
+
+[template public generateCommands(aJob: Job)]
+[for (c: Command | aJob.command)]
+[generateCommand(c)/]
+[/for]
+[/template]
+
+[template public generateCommand(aCommand: Command)]
+"steps:";
+"- name:" [aCommand.Description/]
+" run:" [aCommand.tool/] [aCommand.parameters/]
+[/template]
+
