@@ -104,6 +104,14 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 				return createParametersAdapter();
 			}
 			@Override
+			public Adapter casePermission(Permission object) {
+				return createPermissionAdapter();
+			}
+			@Override
+			public Adapter caseParallel(Parallel object) {
+				return createParallelAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +254,34 @@ public class Devops2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParametersAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link devops2.Permission <em>Permission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see devops2.Permission
+	 * @generated
+	 */
+	public Adapter createPermissionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link devops2.Parallel <em>Parallel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see devops2.Parallel
+	 * @generated
+	 */
+	public Adapter createParallelAdapter() {
 		return null;
 	}
 

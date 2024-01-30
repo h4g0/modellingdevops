@@ -103,6 +103,24 @@ public interface Devops2Factory extends EFactory {
 	Parameters createParameters();
 
 	/**
+	 * Returns a new object of class '<em>Permission</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permission</em>'.
+	 * @generated
+	 */
+	Permission createPermission();
+
+	/**
+	 * Returns a new object of class '<em>Parallel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parallel</em>'.
+	 * @generated
+	 */
+	Parallel createParallel();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

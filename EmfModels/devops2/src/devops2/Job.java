@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link devops2.Job#getName1 <em>Name1</em>}</li>
- *   <li>{@link devops2.Job#getDepends <em>Depends</em>}</li>
  *   <li>{@link devops2.Job#getTool_framework_job <em>Tool framework job</em>}</li>
  *   <li>{@link devops2.Job#getOutput <em>Output</em>}</li>
  *   <li>{@link devops2.Job#getCommand <em>Command</em>}</li>
@@ -24,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link devops2.Job#getInput <em>Input</em>}</li>
  *   <li>{@link devops2.Job#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link devops2.Job#getDescription1 <em>Description1</em>}</li>
+ *   <li>{@link devops2.Job#getPermission <em>Permission</em>}</li>
  *   <li>{@link devops2.Job#getPipeline_envirnonment <em>Pipeline envirnonment</em>}</li>
  * </ul>
  *
@@ -54,18 +54,6 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setName1(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Depends</b></em>' reference list.
-	 * The list contents are of type {@link devops2.Job}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Depends</em>' reference list.
-	 * @see devops2.Devops2Package#getJob_Depends()
-	 * @model
-	 * @generated
-	 */
-	EList<Job> getDepends();
 
 	/**
 	 * Returns the value of the '<em><b>Tool framework job</b></em>' containment reference list.
@@ -104,13 +92,13 @@ public interface Job extends EObject {
 	EList<Command> getCommand();
 
 	/**
-	 * Returns the value of the '<em><b>Ifthenelse</b></em>' reference list.
+	 * Returns the value of the '<em><b>Ifthenelse</b></em>' containment reference list.
 	 * The list contents are of type {@link devops2.IfThenElse}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ifthenelse</em>' reference list.
+	 * @return the value of the '<em>Ifthenelse</em>' containment reference list.
 	 * @see devops2.Devops2Package#getJob_Ifthenelse()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<IfThenElse> getIfthenelse();
@@ -182,6 +170,18 @@ public interface Job extends EObject {
 	 * @generated
 	 */
 	void setDescription1(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Permission</b></em>' containment reference list.
+	 * The list contents are of type {@link devops2.Permission}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Permission</em>' containment reference list.
+	 * @see devops2.Devops2Package#getJob_Permission()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Permission> getPermission();
 
 	/**
 	 * Returns the value of the '<em><b>Pipeline envirnonment</b></em>' containment reference list.

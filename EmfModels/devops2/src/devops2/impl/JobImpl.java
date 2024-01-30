@@ -8,6 +8,7 @@ import devops2.Devops2Package;
 import devops2.Environment;
 import devops2.IfThenElse;
 import devops2.Job;
+import devops2.Permission;
 import devops2.Tool_framework;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link devops2.impl.JobImpl#getName1 <em>Name1</em>}</li>
- *   <li>{@link devops2.impl.JobImpl#getDepends <em>Depends</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getTool_framework_job <em>Tool framework job</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getCommand <em>Command</em>}</li>
@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link devops2.impl.JobImpl#getInput <em>Input</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getEnvironment <em>Environment</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getDescription1 <em>Description1</em>}</li>
+ *   <li>{@link devops2.impl.JobImpl#getPermission <em>Permission</em>}</li>
  *   <li>{@link devops2.impl.JobImpl#getPipeline_envirnonment <em>Pipeline envirnonment</em>}</li>
  * </ul>
  *
@@ -65,16 +66,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * @ordered
 	 */
 	protected String name1 = NAME1_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getDepends() <em>Depends</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDepends()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Job> depends;
 
 	/**
 	 * The cached value of the '{@link #getTool_framework_job() <em>Tool framework job</em>}' containment reference list.
@@ -107,7 +98,7 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected EList<Command> command;
 
 	/**
-	 * The cached value of the '{@link #getIfthenelse() <em>Ifthenelse</em>}' reference list.
+	 * The cached value of the '{@link #getIfthenelse() <em>Ifthenelse</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIfthenelse()
@@ -177,6 +168,16 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	protected String description1 = DESCRIPTION1_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getPermission() <em>Permission</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermission()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Permission> permission;
+
+	/**
 	 * The cached value of the '{@link #getPipeline_envirnonment() <em>Pipeline envirnonment</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,18 +232,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Job> getDepends() {
-		if (depends == null) {
-			depends = new EObjectResolvingEList<Job>(Job.class, this, Devops2Package.JOB__DEPENDS);
-		}
-		return depends;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Tool_framework> getTool_framework_job() {
 		if (tool_framework_job == null) {
 			tool_framework_job = new EObjectContainmentEList<Tool_framework>(Tool_framework.class, this, Devops2Package.JOB__TOOL_FRAMEWORK_JOB);
@@ -281,7 +270,7 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 */
 	public EList<IfThenElse> getIfthenelse() {
 		if (ifthenelse == null) {
-			ifthenelse = new EObjectResolvingEList<IfThenElse>(IfThenElse.class, this, Devops2Package.JOB__IFTHENELSE);
+			ifthenelse = new EObjectContainmentEList<IfThenElse>(IfThenElse.class, this, Devops2Package.JOB__IFTHENELSE);
 		}
 		return ifthenelse;
 	}
@@ -357,6 +346,18 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Permission> getPermission() {
+		if (permission == null) {
+			permission = new EObjectContainmentEList<Permission>(Permission.class, this, Devops2Package.JOB__PERMISSION);
+		}
+		return permission;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Environment> getPipeline_envirnonment() {
 		if (pipeline_envirnonment == null) {
 			pipeline_envirnonment = new EObjectContainmentEList<Environment>(Environment.class, this, Devops2Package.JOB__PIPELINE_ENVIRNONMENT);
@@ -376,10 +377,14 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return ((InternalEList<?>)getTool_framework_job()).basicRemove(otherEnd, msgs);
 			case Devops2Package.JOB__COMMAND:
 				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
+			case Devops2Package.JOB__IFTHENELSE:
+				return ((InternalEList<?>)getIfthenelse()).basicRemove(otherEnd, msgs);
 			case Devops2Package.JOB__INPUT:
 				return ((InternalEList<?>)getInput()).basicRemove(otherEnd, msgs);
 			case Devops2Package.JOB__ENVIRONMENT:
 				return ((InternalEList<?>)getEnvironment()).basicRemove(otherEnd, msgs);
+			case Devops2Package.JOB__PERMISSION:
+				return ((InternalEList<?>)getPermission()).basicRemove(otherEnd, msgs);
 			case Devops2Package.JOB__PIPELINE_ENVIRNONMENT:
 				return ((InternalEList<?>)getPipeline_envirnonment()).basicRemove(otherEnd, msgs);
 		}
@@ -396,8 +401,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case Devops2Package.JOB__NAME1:
 				return getName1();
-			case Devops2Package.JOB__DEPENDS:
-				return getDepends();
 			case Devops2Package.JOB__TOOL_FRAMEWORK_JOB:
 				return getTool_framework_job();
 			case Devops2Package.JOB__OUTPUT:
@@ -414,6 +417,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return getEnvironment();
 			case Devops2Package.JOB__DESCRIPTION1:
 				return getDescription1();
+			case Devops2Package.JOB__PERMISSION:
+				return getPermission();
 			case Devops2Package.JOB__PIPELINE_ENVIRNONMENT:
 				return getPipeline_envirnonment();
 		}
@@ -431,10 +436,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case Devops2Package.JOB__NAME1:
 				setName1((String)newValue);
-				return;
-			case Devops2Package.JOB__DEPENDS:
-				getDepends().clear();
-				getDepends().addAll((Collection<? extends Job>)newValue);
 				return;
 			case Devops2Package.JOB__TOOL_FRAMEWORK_JOB:
 				getTool_framework_job().clear();
@@ -466,6 +467,10 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case Devops2Package.JOB__DESCRIPTION1:
 				setDescription1((String)newValue);
 				return;
+			case Devops2Package.JOB__PERMISSION:
+				getPermission().clear();
+				getPermission().addAll((Collection<? extends Permission>)newValue);
+				return;
 			case Devops2Package.JOB__PIPELINE_ENVIRNONMENT:
 				getPipeline_envirnonment().clear();
 				getPipeline_envirnonment().addAll((Collection<? extends Environment>)newValue);
@@ -484,9 +489,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case Devops2Package.JOB__NAME1:
 				setName1(NAME1_EDEFAULT);
-				return;
-			case Devops2Package.JOB__DEPENDS:
-				getDepends().clear();
 				return;
 			case Devops2Package.JOB__TOOL_FRAMEWORK_JOB:
 				getTool_framework_job().clear();
@@ -512,6 +514,9 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 			case Devops2Package.JOB__DESCRIPTION1:
 				setDescription1(DESCRIPTION1_EDEFAULT);
 				return;
+			case Devops2Package.JOB__PERMISSION:
+				getPermission().clear();
+				return;
 			case Devops2Package.JOB__PIPELINE_ENVIRNONMENT:
 				getPipeline_envirnonment().clear();
 				return;
@@ -529,8 +534,6 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 		switch (featureID) {
 			case Devops2Package.JOB__NAME1:
 				return NAME1_EDEFAULT == null ? name1 != null : !NAME1_EDEFAULT.equals(name1);
-			case Devops2Package.JOB__DEPENDS:
-				return depends != null && !depends.isEmpty();
 			case Devops2Package.JOB__TOOL_FRAMEWORK_JOB:
 				return tool_framework_job != null && !tool_framework_job.isEmpty();
 			case Devops2Package.JOB__OUTPUT:
@@ -547,6 +550,8 @@ public class JobImpl extends MinimalEObjectImpl.Container implements Job {
 				return environment != null && !environment.isEmpty();
 			case Devops2Package.JOB__DESCRIPTION1:
 				return DESCRIPTION1_EDEFAULT == null ? description1 != null : !DESCRIPTION1_EDEFAULT.equals(description1);
+			case Devops2Package.JOB__PERMISSION:
+				return permission != null && !permission.isEmpty();
 			case Devops2Package.JOB__PIPELINE_ENVIRNONMENT:
 				return pipeline_envirnonment != null && !pipeline_envirnonment.isEmpty();
 		}

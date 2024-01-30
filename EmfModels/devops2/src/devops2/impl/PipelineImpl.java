@@ -5,6 +5,8 @@ package devops2.impl;
 import devops2.Devops2Package;
 import devops2.Environment;
 import devops2.Job;
+import devops2.Parallel;
+import devops2.Permission;
 import devops2.Pipeline;
 
 import devops2.Tool_framework;
@@ -19,7 +21,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -35,6 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link devops2.impl.PipelineImpl#getName0 <em>Name0</em>}</li>
  *   <li>{@link devops2.impl.PipelineImpl#getPipeline_tool_framework <em>Pipeline tool framework</em>}</li>
  *   <li>{@link devops2.impl.PipelineImpl#getPipeline_envirnonment <em>Pipeline envirnonment</em>}</li>
+ *   <li>{@link devops2.impl.PipelineImpl#getPermission <em>Permission</em>}</li>
+ *   <li>{@link devops2.impl.PipelineImpl#getParallel <em>Parallel</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,7 +84,7 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 	protected String name0 = NAME0_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPipeline_tool_framework() <em>Pipeline tool framework</em>}' reference list.
+	 * The cached value of the '{@link #getPipeline_tool_framework() <em>Pipeline tool framework</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPipeline_tool_framework()
@@ -99,6 +102,26 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 	 * @ordered
 	 */
 	protected EList<Environment> pipeline_envirnonment;
+
+	/**
+	 * The cached value of the '{@link #getPermission() <em>Permission</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPermission()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Permission> permission;
+
+	/**
+	 * The cached value of the '{@link #getParallel() <em>Parallel</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParallel()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parallel> parallel;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +182,7 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 	 */
 	public EList<Tool_framework> getPipeline_tool_framework() {
 		if (pipeline_tool_framework == null) {
-			pipeline_tool_framework = new EObjectResolvingEList<Tool_framework>(Tool_framework.class, this, Devops2Package.PIPELINE__PIPELINE_TOOL_FRAMEWORK);
+			pipeline_tool_framework = new EObjectContainmentEList<Tool_framework>(Tool_framework.class, this, Devops2Package.PIPELINE__PIPELINE_TOOL_FRAMEWORK);
 		}
 		return pipeline_tool_framework;
 	}
@@ -181,6 +204,30 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Permission> getPermission() {
+		if (permission == null) {
+			permission = new EObjectContainmentEList<Permission>(Permission.class, this, Devops2Package.PIPELINE__PERMISSION);
+		}
+		return permission;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Parallel> getParallel() {
+		if (parallel == null) {
+			parallel = new EObjectContainmentEList<Parallel>(Parallel.class, this, Devops2Package.PIPELINE__PARALLEL);
+		}
+		return parallel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -188,8 +235,14 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 				return ((InternalEList<?>)getWhen()).basicRemove(otherEnd, msgs);
 			case Devops2Package.PIPELINE__JOB:
 				return ((InternalEList<?>)getJob()).basicRemove(otherEnd, msgs);
+			case Devops2Package.PIPELINE__PIPELINE_TOOL_FRAMEWORK:
+				return ((InternalEList<?>)getPipeline_tool_framework()).basicRemove(otherEnd, msgs);
 			case Devops2Package.PIPELINE__PIPELINE_ENVIRNONMENT:
 				return ((InternalEList<?>)getPipeline_envirnonment()).basicRemove(otherEnd, msgs);
+			case Devops2Package.PIPELINE__PERMISSION:
+				return ((InternalEList<?>)getPermission()).basicRemove(otherEnd, msgs);
+			case Devops2Package.PIPELINE__PARALLEL:
+				return ((InternalEList<?>)getParallel()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -224,6 +277,10 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 				return getPipeline_tool_framework();
 			case Devops2Package.PIPELINE__PIPELINE_ENVIRNONMENT:
 				return getPipeline_envirnonment();
+			case Devops2Package.PIPELINE__PERMISSION:
+				return getPermission();
+			case Devops2Package.PIPELINE__PARALLEL:
+				return getParallel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,6 +313,14 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 				getPipeline_envirnonment().clear();
 				getPipeline_envirnonment().addAll((Collection<? extends Environment>)newValue);
 				return;
+			case Devops2Package.PIPELINE__PERMISSION:
+				getPermission().clear();
+				getPermission().addAll((Collection<? extends Permission>)newValue);
+				return;
+			case Devops2Package.PIPELINE__PARALLEL:
+				getParallel().clear();
+				getParallel().addAll((Collection<? extends Parallel>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -283,6 +348,12 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 			case Devops2Package.PIPELINE__PIPELINE_ENVIRNONMENT:
 				getPipeline_envirnonment().clear();
 				return;
+			case Devops2Package.PIPELINE__PERMISSION:
+				getPermission().clear();
+				return;
+			case Devops2Package.PIPELINE__PARALLEL:
+				getParallel().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -305,6 +376,10 @@ public class PipelineImpl extends MinimalEObjectImpl.Container implements Pipeli
 				return pipeline_tool_framework != null && !pipeline_tool_framework.isEmpty();
 			case Devops2Package.PIPELINE__PIPELINE_ENVIRNONMENT:
 				return pipeline_envirnonment != null && !pipeline_envirnonment.isEmpty();
+			case Devops2Package.PIPELINE__PERMISSION:
+				return permission != null && !permission.isEmpty();
+			case Devops2Package.PIPELINE__PARALLEL:
+				return parallel != null && !parallel.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

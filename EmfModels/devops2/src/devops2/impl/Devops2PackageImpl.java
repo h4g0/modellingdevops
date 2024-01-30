@@ -9,7 +9,9 @@ import devops2.Devops2Package;
 import devops2.Environment;
 import devops2.IfThenElse;
 import devops2.Job;
+import devops2.Parallel;
 import devops2.Parameters;
+import devops2.Permission;
 import devops2.Pipeline;
 import devops2.Tool_framework;
 import devops2.When;
@@ -89,6 +91,20 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	private EClass parametersEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass permissionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parallelEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -201,6 +217,24 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPipeline_Permission() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPipeline_Parallel() {
+		return (EReference)pipelineEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPipeline_When() {
 		return (EReference)pipelineEClass.getEStructuralFeatures().get(0);
 	}
@@ -228,7 +262,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJob_Depends() {
+	public EReference getJob_Tool_framework_job() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -237,7 +271,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJob_Tool_framework_job() {
+	public EReference getJob_Output() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -246,7 +280,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJob_Output() {
+	public EReference getJob_Command() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -255,7 +289,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJob_Command() {
+	public EReference getJob_Ifthenelse() {
 		return (EReference)jobEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -264,17 +298,8 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getJob_Ifthenelse() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getJob_Allow_faillure() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -283,7 +308,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EReference getJob_Input() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(7);
+		return (EReference)jobEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -292,7 +317,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EReference getJob_Environment() {
-		return (EReference)jobEClass.getEStructuralFeatures().get(8);
+		return (EReference)jobEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -301,7 +326,16 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * @generated
 	 */
 	public EAttribute getJob_Description1() {
-		return (EAttribute)jobEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)jobEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getJob_Permission() {
+		return (EReference)jobEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -525,6 +559,51 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPermission() {
+		return permissionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPermission_Key() {
+		return (EAttribute)permissionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPermission_Value() {
+		return (EAttribute)permissionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParallel() {
+		return parallelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParallel_Job() {
+		return (EReference)parallelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Devops2Factory getDevops2Factory() {
 		return (Devops2Factory)getEFactoryInstance();
 	}
@@ -554,10 +633,11 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		createEAttribute(pipelineEClass, PIPELINE__NAME0);
 		createEReference(pipelineEClass, PIPELINE__PIPELINE_TOOL_FRAMEWORK);
 		createEReference(pipelineEClass, PIPELINE__PIPELINE_ENVIRNONMENT);
+		createEReference(pipelineEClass, PIPELINE__PERMISSION);
+		createEReference(pipelineEClass, PIPELINE__PARALLEL);
 
 		jobEClass = createEClass(JOB);
 		createEAttribute(jobEClass, JOB__NAME1);
-		createEReference(jobEClass, JOB__DEPENDS);
 		createEReference(jobEClass, JOB__TOOL_FRAMEWORK_JOB);
 		createEReference(jobEClass, JOB__OUTPUT);
 		createEReference(jobEClass, JOB__COMMAND);
@@ -566,6 +646,7 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		createEReference(jobEClass, JOB__INPUT);
 		createEReference(jobEClass, JOB__ENVIRONMENT);
 		createEAttribute(jobEClass, JOB__DESCRIPTION1);
+		createEReference(jobEClass, JOB__PERMISSION);
 		createEReference(jobEClass, JOB__PIPELINE_ENVIRNONMENT);
 
 		commandEClass = createEClass(COMMAND);
@@ -597,6 +678,13 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 
 		parametersEClass = createEClass(PARAMETERS);
 		createEAttribute(parametersEClass, PARAMETERS__PARAMETER);
+
+		permissionEClass = createEClass(PERMISSION);
+		createEAttribute(permissionEClass, PERMISSION__KEY);
+		createEAttribute(permissionEClass, PERMISSION__VALUE);
+
+		parallelEClass = createEClass(PARALLEL);
+		createEReference(parallelEClass, PARALLEL__JOB);
 	}
 
 	/**
@@ -633,20 +721,22 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 		initEReference(getPipeline_When(), this.getWhen(), null, "when", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_Job(), this.getJob(), null, "job", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPipeline_Name0(), ecorePackage.getEString(), "Name0", null, 0, 1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPipeline_Pipeline_tool_framework(), this.getTool_framework(), null, "pipeline_tool_framework", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Pipeline_tool_framework(), this.getTool_framework(), null, "pipeline_tool_framework", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPipeline_Pipeline_envirnonment(), this.getEnvironment(), null, "pipeline_envirnonment", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Permission(), this.getPermission(), null, "permission", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPipeline_Parallel(), this.getParallel(), null, "parallel", null, 0, -1, Pipeline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jobEClass, Job.class, "Job", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJob_Name1(), ecorePackage.getEString(), "Name1", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Depends(), this.getJob(), null, "depends", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Tool_framework_job(), this.getTool_framework(), null, "tool_framework_job", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Output(), this.getArtifact(), null, "output", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Command(), this.getCommand(), null, "command", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getJob_Ifthenelse(), this.getIfThenElse(), null, "ifthenelse", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Ifthenelse(), this.getIfThenElse(), null, "ifthenelse", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_Allow_faillure(), ecorePackage.getEBoolean(), "Allow_faillure", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Input(), this.getArtifact(), null, "input", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Environment(), this.getEnvironment(), null, "environment", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJob_Description1(), ecorePackage.getEString(), "Description1", null, 0, 1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getJob_Permission(), this.getPermission(), null, "permission", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJob_Pipeline_envirnonment(), this.getEnvironment(), null, "pipeline_envirnonment", null, 0, -1, Job.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commandEClass, Command.class, "Command", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -678,6 +768,13 @@ public class Devops2PackageImpl extends EPackageImpl implements Devops2Package {
 
 		initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameters_Parameter(), ecorePackage.getEString(), "Parameter", null, 0, 1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(permissionEClass, Permission.class, "Permission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPermission_Key(), ecorePackage.getEString(), "Key", null, 0, 1, Permission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPermission_Value(), ecorePackage.getEString(), "Value", null, 0, 1, Permission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parallelEClass, Parallel.class, "Parallel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParallel_Job(), this.getJob(), null, "job", null, 0, -1, Parallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -94,7 +94,7 @@ public interface Devops2Package extends EPackage {
 	int PIPELINE__NAME0 = 2;
 
 	/**
-	 * The feature id for the '<em><b>Pipeline tool framework</b></em>' reference list.
+	 * The feature id for the '<em><b>Pipeline tool framework</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -112,13 +112,31 @@ public interface Devops2Package extends EPackage {
 	int PIPELINE__PIPELINE_ENVIRNONMENT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Permission</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__PERMISSION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Parallel</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PIPELINE__PARALLEL = 6;
+
+	/**
 	 * The number of structural features of the '<em>Pipeline</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PIPELINE_FEATURE_COUNT = 5;
+	int PIPELINE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Pipeline</em>' class.
@@ -150,22 +168,13 @@ public interface Devops2Package extends EPackage {
 	int JOB__NAME1 = 0;
 
 	/**
-	 * The feature id for the '<em><b>Depends</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JOB__DEPENDS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Tool framework job</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__TOOL_FRAMEWORK_JOB = 2;
+	int JOB__TOOL_FRAMEWORK_JOB = 1;
 
 	/**
 	 * The feature id for the '<em><b>Output</b></em>' reference list.
@@ -174,7 +183,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__OUTPUT = 3;
+	int JOB__OUTPUT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
@@ -183,16 +192,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__COMMAND = 4;
+	int JOB__COMMAND = 3;
 
 	/**
-	 * The feature id for the '<em><b>Ifthenelse</b></em>' reference list.
+	 * The feature id for the '<em><b>Ifthenelse</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__IFTHENELSE = 5;
+	int JOB__IFTHENELSE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Allow faillure</b></em>' attribute.
@@ -201,7 +210,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__ALLOW_FAILLURE = 6;
+	int JOB__ALLOW_FAILLURE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' containment reference list.
@@ -210,7 +219,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__INPUT = 7;
+	int JOB__INPUT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Environment</b></em>' containment reference list.
@@ -219,7 +228,7 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__ENVIRONMENT = 8;
+	int JOB__ENVIRONMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Description1</b></em>' attribute.
@@ -228,7 +237,16 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JOB__DESCRIPTION1 = 9;
+	int JOB__DESCRIPTION1 = 8;
+
+	/**
+	 * The feature id for the '<em><b>Permission</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOB__PERMISSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Pipeline envirnonment</b></em>' containment reference list.
@@ -599,6 +617,89 @@ public interface Devops2Package extends EPackage {
 	int PARAMETERS_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link devops2.impl.PermissionImpl <em>Permission</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see devops2.impl.PermissionImpl
+	 * @see devops2.impl.Devops2PackageImpl#getPermission()
+	 * @generated
+	 */
+	int PERMISSION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Permission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Permission</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link devops2.impl.ParallelImpl <em>Parallel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see devops2.impl.ParallelImpl
+	 * @see devops2.impl.Devops2PackageImpl#getParallel()
+	 * @generated
+	 */
+	int PARALLEL = 10;
+
+	/**
+	 * The feature id for the '<em><b>Job</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARALLEL__JOB = 0;
+
+	/**
+	 * The number of structural features of the '<em>Parallel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARALLEL_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Parallel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARALLEL_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link devops2.Pipeline <em>Pipeline</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -631,10 +732,10 @@ public interface Devops2Package extends EPackage {
 	EAttribute getPipeline_Name0();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Pipeline#getPipeline_tool_framework <em>Pipeline tool framework</em>}'.
+	 * Returns the meta object for the containment reference list '{@link devops2.Pipeline#getPipeline_tool_framework <em>Pipeline tool framework</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Pipeline tool framework</em>'.
+	 * @return the meta object for the containment reference list '<em>Pipeline tool framework</em>'.
 	 * @see devops2.Pipeline#getPipeline_tool_framework()
 	 * @see #getPipeline()
 	 * @generated
@@ -651,6 +752,28 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getPipeline_Pipeline_envirnonment();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.Pipeline#getPermission <em>Permission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Permission</em>'.
+	 * @see devops2.Pipeline#getPermission()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Permission();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.Pipeline#getParallel <em>Parallel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parallel</em>'.
+	 * @see devops2.Pipeline#getParallel()
+	 * @see #getPipeline()
+	 * @generated
+	 */
+	EReference getPipeline_Parallel();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link devops2.Pipeline#getWhen <em>When</em>}'.
@@ -683,17 +806,6 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getJob_Name1();
-
-	/**
-	 * Returns the meta object for the reference list '{@link devops2.Job#getDepends <em>Depends</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Depends</em>'.
-	 * @see devops2.Job#getDepends()
-	 * @see #getJob()
-	 * @generated
-	 */
-	EReference getJob_Depends();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link devops2.Job#getTool_framework_job <em>Tool framework job</em>}'.
@@ -729,10 +841,10 @@ public interface Devops2Package extends EPackage {
 	EReference getJob_Command();
 
 	/**
-	 * Returns the meta object for the reference list '{@link devops2.Job#getIfthenelse <em>Ifthenelse</em>}'.
+	 * Returns the meta object for the containment reference list '{@link devops2.Job#getIfthenelse <em>Ifthenelse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Ifthenelse</em>'.
+	 * @return the meta object for the containment reference list '<em>Ifthenelse</em>'.
 	 * @see devops2.Job#getIfthenelse()
 	 * @see #getJob()
 	 * @generated
@@ -782,6 +894,17 @@ public interface Devops2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getJob_Description1();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.Job#getPermission <em>Permission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Permission</em>'.
+	 * @see devops2.Job#getPermission()
+	 * @see #getJob()
+	 * @generated
+	 */
+	EReference getJob_Permission();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link devops2.Job#getPipeline_envirnonment <em>Pipeline envirnonment</em>}'.
@@ -1041,6 +1164,59 @@ public interface Devops2Package extends EPackage {
 	EAttribute getParameters_Parameter();
 
 	/**
+	 * Returns the meta object for class '{@link devops2.Permission <em>Permission</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Permission</em>'.
+	 * @see devops2.Permission
+	 * @generated
+	 */
+	EClass getPermission();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.Permission#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see devops2.Permission#getKey()
+	 * @see #getPermission()
+	 * @generated
+	 */
+	EAttribute getPermission_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link devops2.Permission#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see devops2.Permission#getValue()
+	 * @see #getPermission()
+	 * @generated
+	 */
+	EAttribute getPermission_Value();
+
+	/**
+	 * Returns the meta object for class '{@link devops2.Parallel <em>Parallel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parallel</em>'.
+	 * @see devops2.Parallel
+	 * @generated
+	 */
+	EClass getParallel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link devops2.Parallel#getJob <em>Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Job</em>'.
+	 * @see devops2.Parallel#getJob()
+	 * @see #getParallel()
+	 * @generated
+	 */
+	EReference getParallel_Job();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1087,7 +1263,7 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute PIPELINE__NAME0 = eINSTANCE.getPipeline_Name0();
 		/**
-		 * The meta object literal for the '<em><b>Pipeline tool framework</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Pipeline tool framework</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1100,6 +1276,20 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EReference PIPELINE__PIPELINE_ENVIRNONMENT = eINSTANCE.getPipeline_Pipeline_envirnonment();
+		/**
+		 * The meta object literal for the '<em><b>Permission</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__PERMISSION = eINSTANCE.getPipeline_Permission();
+		/**
+		 * The meta object literal for the '<em><b>Parallel</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PIPELINE__PARALLEL = eINSTANCE.getPipeline_Parallel();
 		/**
 		 * The meta object literal for the '<em><b>When</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1124,13 +1314,6 @@ public interface Devops2Package extends EPackage {
 		 */
 		EAttribute JOB__NAME1 = eINSTANCE.getJob_Name1();
 		/**
-		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference JOB__DEPENDS = eINSTANCE.getJob_Depends();
-		/**
 		 * The meta object literal for the '<em><b>Tool framework job</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1152,7 +1335,7 @@ public interface Devops2Package extends EPackage {
 		 */
 		EReference JOB__COMMAND = eINSTANCE.getJob_Command();
 		/**
-		 * The meta object literal for the '<em><b>Ifthenelse</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Ifthenelse</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1186,6 +1369,13 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute JOB__DESCRIPTION1 = eINSTANCE.getJob_Description1();
+		/**
+		 * The meta object literal for the '<em><b>Permission</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOB__PERMISSION = eINSTANCE.getJob_Permission();
 		/**
 		 * The meta object literal for the '<em><b>Pipeline envirnonment</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
@@ -1368,6 +1558,45 @@ public interface Devops2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETERS__PARAMETER = eINSTANCE.getParameters_Parameter();
+		/**
+		 * The meta object literal for the '{@link devops2.impl.PermissionImpl <em>Permission</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see devops2.impl.PermissionImpl
+		 * @see devops2.impl.Devops2PackageImpl#getPermission()
+		 * @generated
+		 */
+		EClass PERMISSION = eINSTANCE.getPermission();
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERMISSION__KEY = eINSTANCE.getPermission_Key();
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERMISSION__VALUE = eINSTANCE.getPermission_Value();
+		/**
+		 * The meta object literal for the '{@link devops2.impl.ParallelImpl <em>Parallel</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see devops2.impl.ParallelImpl
+		 * @see devops2.impl.Devops2PackageImpl#getParallel()
+		 * @generated
+		 */
+		EClass PARALLEL = eINSTANCE.getParallel();
+		/**
+		 * The meta object literal for the '<em><b>Job</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARALLEL__JOB = eINSTANCE.getParallel_Job();
 
 	}
 

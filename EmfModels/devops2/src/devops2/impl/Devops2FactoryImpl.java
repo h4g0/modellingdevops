@@ -65,6 +65,8 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 			case Devops2Package.TOOL_FRAMEWORK: return createTool_framework();
 			case Devops2Package.IF_THEN_ELSE: return createIfThenElse();
 			case Devops2Package.PARAMETERS: return createParameters();
+			case Devops2Package.PERMISSION: return createPermission();
+			case Devops2Package.PARALLEL: return createParallel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +160,26 @@ public class Devops2FactoryImpl extends EFactoryImpl implements Devops2Factory {
 	public Parameters createParameters() {
 		ParametersImpl parameters = new ParametersImpl();
 		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Permission createPermission() {
+		PermissionImpl permission = new PermissionImpl();
+		return permission;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parallel createParallel() {
+		ParallelImpl parallel = new ParallelImpl();
+		return parallel;
 	}
 
 	/**
