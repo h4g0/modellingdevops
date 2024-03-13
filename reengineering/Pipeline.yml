@@ -1,0 +1,40 @@
+name: Pipeline
+
+
+
+on: [ main ]
+
+
+jobs:
+	build_and_test:
+		runs-on: circleci/node@5.0.2
+		
+		
+		steps:
+			- name: 
+			 run: checkout 
+			- name: 
+			 run: node/install-packages  pkg-manager: yarn 
+			- name: Build app
+			 run: yarn  build 
+			- name: 
+			 run: persist_to_workspace  root: ~/project  paths:  - . 
+		
+		
+		
+		
+	deploy:
+		runs-on: circleci/node@5.0.2
+		
+		
+		steps:
+			- name: 
+			 run: attach_workspace  at: ~/project 
+			- name: 
+			 run: heroku/deploy-via-git  force: true 
+		
+		
+		
+		
+
+

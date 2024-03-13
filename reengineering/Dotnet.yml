@@ -1,0 +1,30 @@
+name: Dotnet:
+
+
+
+on: [ main ]
+
+
+
+jobs:
+	build-and-test:
+		runs-on: circleci/windows@5.0
+		
+		
+		steps:
+			- name: 
+			 run: checkout 
+			- name: Restore project dependencies and tools
+			 run: dotnet   restore src\Cfd 
+			- name: Running tests
+			 run: |  dotnet test ./Cfd.Tests --logger:"junit;LogFilePath=test-results/dotnet-sample-cfd/xunit.xml"  mkdir test-results 
+			- name: 
+			 run: store_test_results:   path: ./Cfd.Tests/test-results 
+			- name: 
+			 run: store_artifact   path: ./Cfd.Tests/test-results 
+		
+		
+		
+		
+
+

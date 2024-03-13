@@ -74,19 +74,89 @@ def process_repos_keys(myDB,count):
         print(f"sleeping for {sleeping_time} seconds")
 
         time.sleep(sleeping_time)
+<<<<<<< HEAD
+
+def remove_tools(repos):
+
+    forbidden = ["Jenkins","JenkinsX","GitLab","GitHubActions","Travis"]
+    
+    def contains_forbidden(repo):
+            
+        for snapshot in repo["snapshots"]:
+            for tool in snapshot["tools"]:
+                if tool in forbidden:
+                    return True
+        return False
+    
+    new_repos = []
+
+    for repo in repos:
+        if (not contains_forbidden(repo)):
+            new_repos.append(repo)
+    
+    return new_repos
+
+
+def get_transitions(repos):
+    
+    new_repos = []
+    
+    def contains_transition(repo):
+        tools = []
+
+        for snapshot in repo["snapshots"]:
+            
+
+            for tool in snapshot["tools"]:
+                if len(tools) > 0 and (not (tool in tools)):
+                    return True
+            
+            tools = snapshot["tools"]
+
+        return False
+    
+    for repo in repos:
+        if contains_transition(repo):
+            new_repos.append(repo)
+    
+    return new_repos
+
+def main():
+    
+    ##myDB = DB()
+=======
         
 def main():
     
     myDB = DB()
+>>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
 
     ##get_raw_file("MPLew-is/github-api-client","main","Examples/GithubActionsWebhookClient/ReadMe.md")
     ##get_tool_usage_statistics(myDB)
 
+<<<<<<< HEAD
+    f = open('Repositories.repo_tools_history.json')
+
+    repos = json.load(f)
+
+    print(pretty_json(repos[0]))
+    print(len(repos))
+    new_repos = get_transitions(remove_tools(repos))
+    print(len(remove_tools(repos)))
+    print(len(new_repos))
+    json_object = json.dumps(new_repos, indent=4)
+    
+    # Writing to sample.json
+    with open("transactions.json", "w") as outfile:
+        outfile.write(json_object)
+    """repos = myDB.get_random_processed_repositories_with_tool(1000,"GitHubActions")
+=======
    
 
     ##repos = myDB.get_random_processed_repositories(10000)
 
     repos = myDB.get_random_processed_repositories_with_tool(1000,"GitHubActions")
+>>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
 
     random.shuffle(repos)
 
@@ -108,7 +178,11 @@ def main():
             count+=1
         except: 
             count += 1
+<<<<<<< HEAD
+    repos_filename = [("Agola","\.agola"),
+=======
     """repos_filename = [("Agola","\.agola"),
+>>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
                     ("AppVeyor","appveyor\.yml"),
                     ("ArgoCD","argo\-cd"),
                     ("Bytebase","air\.toml"),
