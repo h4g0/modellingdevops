@@ -1,0 +1,27 @@
+name: Python:
+
+
+
+on: [ main ]
+
+
+
+jobs:
+ build-and-test:
+  runs-on: cimg/python:3.10.5
+  runs-on: circleci/python@2.1.1
+  
+  
+  steps:
+   - name: 
+    run: checkout 
+   - name: 
+    run: python/install-packages  pkg-manager: pip 
+   - name: Run tests
+    run: pytest 
+  
+  
+  
+  
+
+

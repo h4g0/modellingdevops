@@ -1,0 +1,37 @@
+name: Dotnet
+
+
+
+on: [ push ]
+
+
+
+jobs:
+ build-and-test:
+  runs-on: windows-latest 
+  
+  
+  steps:
+   - name: 
+     run: checkout 
+   - name: Restore project dependencies and tools
+     run: dotnet   restore src\Cfd 
+   - name: Running tests
+     run: |
+      dotnet test ./Cfd.Tests --logger:"junit;LogFilePath=test-results/dotnet-sample-cfd/xunit.xml"
+      mkdir test-results 
+   - uses: dorny/test-reporter@v1
+     with:
+        artifact: test-results           
+        name: test results
+        path: './Cfd.Tests/test-results'                   
+        reporter: jest-junit
+   - name: Upload artifact
+     uses: actions/upload-artifact@v4
+     with:
+      name: project
+      path: './Cfd.Tests/test-results'
+  
+  
+  
+  

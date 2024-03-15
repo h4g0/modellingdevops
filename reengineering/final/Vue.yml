@@ -1,0 +1,22 @@
+name: Vue
+
+
+
+on: [ push ]
+
+
+
+jobs:
+ path-filtering-filter:
+  
+  runs-on: ubuntu-latest
+  
+  steps:
+   - name: 
+     run:  base-revision  main 
+   - name: 
+     run: |
+      frontend/.* run-frontend true  
+      backend/.* run-backend true 
+   - name: 
+     run: config-path  ".circleci/dynamic_config.yml" 
