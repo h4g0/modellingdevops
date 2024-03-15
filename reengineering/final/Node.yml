@@ -28,6 +28,7 @@ jobs:
   
  deploy:
   runs-on: ubuntu-latest
+  needs: build_and_test
   container:
    image: node:18
    env:
