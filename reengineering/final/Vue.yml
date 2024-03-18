@@ -1,19 +1,40 @@
 name: Vue
 
 
-
 on: [ push ]
 
 
 
 jobs:
- path-filtering-filter:
+ frontend-test:
+  if:  vars.runfrontend
   
   runs-on: ubuntu-latest
   
+  container:
+   image: node:18
+   env:
+    NODE_ENV: development  
+  
+  
   steps:
-   - run:  base-revision  main 
-   - run: |
-      frontend/.* run-frontend true  
-      backend/.* run-backend true 
-   - run: config-path  ".circleci/dynamic_config.yml"
+   - run: checkout 
+   - run: node/install-packages 
+   - run: npm  test 
+  
+  
+  
+  
+ backend-test:
+   if:  vars.runbackend
+   
+   runs-on: ubuntu-latest
+   
+   container:
+    image: cimg/python:3.10.5
+    options: --user  root  
+   
+   steps:
+    - run: checkout 
+    - run: pip install -r requirements.txt 
+    - run: pytest

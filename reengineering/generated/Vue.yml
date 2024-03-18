@@ -1,5 +1,8 @@
-name: Vue:
+name: Vue
 
+env:
+ run-frontend : false
+ run-backend : false
 
 
 on: [ main ]
@@ -7,19 +10,36 @@ on: [ main ]
 
 
 jobs:
-	path-filtering/filter:
-		
-		
-		steps:
-			- name: 
-			 run:  base-revision  main 
-			- name: 
-			 run: mapping  |  frontend/.* run-frontend true  backend/.* run-backend true 
-			- name: 
-			 run: config-path  ".circleci/dynamic_config.yml" 
-		
-		
-		
-		
-
-
+ frontend-test:
+  runs-on: cimg/node:15.1
+  
+  if:  pipeline.parameters.run-frontend
+  
+  
+  steps:
+   - name: 
+    run: checkout 
+   - name: 
+    run: node/install-packages 
+   - name: Run tests
+    run: npm  test 
+  
+  
+  
+  
+ backend-test:
+  runs-on:  cimg/python:3.8
+  
+  if: pipeline.parameters.run-backend
+  
+  
+  steps:
+   - name: 
+    run: checkout 
+   - name: 
+    run: python/install-package  pkg-manager: pip 
+   - name: Run tests
+    run: pytest 
+  
+  
+  
