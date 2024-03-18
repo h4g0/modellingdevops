@@ -11,13 +11,9 @@ jobs:
   runs-on: ubuntu-latest
   container:
    image: cimg/python:3.10.5
-   options: --user root
+   options: --user  root
   
   steps:
    - uses: actions/checkout@v4
-   - name: 
-     run: pip install requirements.txt 
-   - name: Run tests
-     run: pytest 
-  
-  
+   - run: pip install -r requirements.txt 
+   - run: pytest 

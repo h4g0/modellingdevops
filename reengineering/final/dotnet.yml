@@ -12,26 +12,17 @@ jobs:
   
   
   steps:
-   - name: 
-     run: checkout 
-   - name: Restore project dependencies and tools
-     run: dotnet   restore src\Cfd 
-   - name: Running tests
-     run: |
+   - uses: actions/checkout@v4   
+   - run: dotnet   restore src\Cfd 
+   - run: |
       dotnet test ./Cfd.Tests --logger:"junit;LogFilePath=test-results/dotnet-sample-cfd/xunit.xml"
-      mkdir test-results 
-   - uses: dorny/test-reporter@v1
+      mkdir test-results
+   - uses: EnricoMi/publish-unit-test-result-action@v2
+     if: always()
      with:
-        artifact: test-results           
-        name: test results
-        path: './Cfd.Tests/test-results'                   
-        reporter: jest-junit
-   - name: Upload artifact
-     uses: actions/upload-artifact@v4
+      files: |
+          './Cfd.Tests/test-results'  
+   - uses: actions/upload-artifact@v4
      with:
       name: project
       path: './Cfd.Tests/test-results'
-  
-  
-  
-  
