@@ -18,8 +18,8 @@ jobs:
   
   
   steps:
-   - run: checkout 
-   - run: node/install-packages 
+   - run: actions/checkout@v4 
+   - run: npm i
    - run: npm  test 
   
   
