@@ -19,7 +19,7 @@ def parseWhen(when,metamodel):
     if push != "":
         myWhen.eSet("Trigger", get_pretty_yaml(push))'''
     
-    myWhen.eSet("Trigger", get_pretty_yaml(when))
+    myWhen.eSet("Trigger", get_pretty_yaml({when[0]:when[1]}))
 
     return myWhen
 
@@ -32,8 +32,8 @@ def parseEnvironment(environemnt,metamodel):
 
         myEnvironemnt = Environemnt()
 
-        myEnvironemnt.eSet("Key", currenv[0])
-        myEnvironemnt.eSet("Value", currenv[1])
+        myEnvironemnt.eSet("Key", str(currenv[0]))
+        myEnvironemnt.eSet("Value", str(currenv[1]))
 
         environemnts.append(myEnvironemnt)
 
@@ -112,9 +112,6 @@ def parseJobCommand(command,metamodel,previous=None):
     
     if previous != None:
         myCommand.depends.extend([previous])
-        print(myCommand.depends)
-
-    print(previous)
 
     return myCommand
 
@@ -148,32 +145,78 @@ def parseJobTools(job,metamodel):
 
         myTool = Tool()
 
-        myTool.eSet("Name", runson)
+        myTool.eSet("Name", str(runson))
 
         tools.append(myTool)
     
+    def parse_tem(term):
     
-    strategy = job.get("strategy","")
+        strategy = job.get(term,"")
 
-    if strategy != "":
-        Tool = metamodel.getEClassifier('Tool')
+        if strategy != "":
+            Tool = metamodel.getEClassifier('Tool')
 
-        myTool = Tool()
+            myTool = Tool()
 
-        myTool.eSet("Name", get_pretty_yaml({'strategy': strategy}))
+            myTool.eSet("Name", get_pretty_yaml({term: strategy}))
 
-        tools.append(myTool)
+            tools.append(myTool)
+
+    parse_tem("strategy")
+    parse_tem("container")
+    parse_tem("services")
+
+    
 
     return tools
 
-def parseJob(job,metamodel):
+def parseJob(job,metamodel,pastjobs):
     Job = metamodel.getEClassifier('Job')
     myJob = Job()
 
     myJob.eSet("Name", job[0])
 
+
     content = job[1]
 
+    permission = content.get("permissions","")
+
+    if permission != "":
+        permissions = parsePermissions(permission,metamodel)
+
+        for currper in permissions:
+            myJob.permission.append(currper)
+
+    secrets = content.get("secrets","")
+
+    if secrets != "":
+        Environemnt = metamodel.getEClassifier('Environment')
+        myEnvironemnt = Environemnt()
+
+        myEnvironemnt.eSet("Key", "secrets")
+        myEnvironemnt.eSet("Value", str(secrets))
+
+        myJob.environment.append(myEnvironemnt)
+
+
+    env = content.get("env","")
+    
+    if env != "":
+        envs = parseEnvironment(env,metamodel)
+    
+        for currenv in envs:
+            myJob.environment.append(currenv)
+
+    needs = content.get("needs","")
+
+    if needs != "":
+        pastjobsneeds = list(filter(lambda x: x.Name == needs,pastjobs))
+        myJob.depends.extend(pastjobsneeds)
+        
+    jobIf = content.get("if","")
+
+    
+        
     tools = parseJobTools(content,metamodel)
 
     for tool in tools:
@@ -181,12 +224,41 @@ def parseJob(job,metamodel):
 
     commands = content.get("steps","")
 
-    if commands != "":
+    if commands != "" and jobIf == "":
         mycommands,myifs = parseJobCommandsAndIfs(commands,metamodel)
         for mycommand in mycommands:
             myJob.command.append(mycommand)
         for myif in myifs:
             myJob.ifthenelse.append(myif)
+
+    
+    if commands != "" and jobIf != "":
+
+        mycommands,myifs = parseJobCommandsAndIfs(commands,metamodel)
+        IfThenElse = metamodel.getEClassifier('IfThenElse')
+        If = metamodel.getEClassifier('If')
+
+        for mycommand in mycommands:
+            myIfThenElse = IfThenElse()
+            myIfThenElse.eSet("Condition",  jobIf)
+
+            myIf = If()
+            myIf.command.append(mycommand)
+    
+            myIfThenElse.eSet("true",myIf)
+
+            myJob.ifthenelse.append(myIfThenElse)
+
+        for myif in myifs:
+            myIfThenElse = IfThenElse()
+            myIfThenElse.eSet("Condition",  jobIf)
+
+            myIf = If()
+            myIf.ifthenelse.append(myif)
+    
+            myIfThenElse.eSet("true",myIf)
+
+            myJob.ifthenelse.append(myIfThenElse)
 
     return myJob
 
@@ -194,25 +266,74 @@ def parseJobs(jobs,metamodel):
     myjobs = []
     
     for job in jobs.items():
-        myJob = parseJob(job,metamodel)
+        myJob = parseJob(job,metamodel,myjobs)
         myjobs.append(myJob)
 
     return myjobs
 
+
+def parsePermissions(permission,metamodel):
+    Permission = metamodel.getEClassifier('Permission')
+    
+    permissions = list()
+
+    if isinstance(permission,str):
+        permission = {permission: None}
+    
+    for currentper in permission.items():
+
+        myPermission = Permission()
+
+        myPermission.eSet("Key", str(currentper[0]))
+        myPermission.eSet("Value", str(currentper[1]))
+
+        permissions.append(myPermission)
+
+    return permissions
+
 def parsePipeline(yamlfile,metamodel):
     Pipeline = metamodel.getEClassifier('Pipeline')
 
+   
     myPipeline = Pipeline()
+    
+    if yamlfile == None:
+        return Pipeline
     
     name = yamlfile.get("name","")
     myPipeline.eSet("Name", name)
 
+    permission = yamlfile.get("permissions","")
+
+    if permission != "":
+        permissions = parsePermissions(permission,metamodel)
+
+        for currper in permissions:
+            myPipeline.permission.append(currper)
+
+    concurrency = yamlfile.get("concurrency","")
+
+    if concurrency != "":
+        myPipeline.eSet("Concurrent",True)
+
     when = yamlfile.get(True,"")
 
     if when != "":
-        myWhen = parseWhen(when,metamodel)
+        if isinstance(when, str):
+            myWhen = parseWhen((when,None),metamodel)
 
-        myPipeline.when.append(myWhen)
+            myPipeline.when.append(myWhen)
+
+        elif isinstance(when,list):
+            for w in when:
+                myWhen = parseWhen((w,None),metamodel)
+
+                myPipeline.when.append(myWhen)
+        else:
+            for w in when.items():
+                myWhen = parseWhen(w,metamodel)
+
+                myPipeline.when.append(myWhen)
 
     environment = yamlfile.get("env","")
 
@@ -222,6 +343,22 @@ def parsePipeline(yamlfile,metamodel):
         for currenv in environments:
             myPipeline.environment.append(currenv)
     
+    if concurrency != "":
+        Environemnt = metamodel.getEClassifier('Environment')
+        myEnvirnonment = Environemnt()
+
+        myEnvirnonment.eSet("Key", "concurrency")
+        myEnvirnonment.eSet("Value", get_pretty_yaml(concurrency))
+        
+        myPipeline.environment.append(myEnvirnonment)
+
+    permission = yamlfile.get("permissions","")
+
+    if permission != "":
+        permissions = parsePermissions(permission,metamodel)
+
+        for currper in permissions:
+            myPipeline.permission.append(currper)
     jobs = yamlfile.get("jobs","")
     
     if jobs != "":
@@ -236,6 +373,4 @@ def parse_github_actions(yamlfile,metamodel):
 
     myPipeline = parsePipeline(yamlfile,metamodel)
     
-    print_metamodel_instance(myPipeline)
-
     return myPipeline

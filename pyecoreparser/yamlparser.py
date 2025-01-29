@@ -1,6 +1,20 @@
 import os
 import yaml
 
+def read_yaml(filename):
+    try:
+        with open(filename, 'r') as file:
+            return yaml.safe_load(file)
+    except FileNotFoundError:
+        print(f"Error: File {filename} not found")
+        return None
+    except yaml.YAMLError as e:
+        print(f"Error: Invalid YAML file - {str(e)}")
+        return None
+    except Exception as e:
+        print(f"Error: An unexpected error occurred - {str(e)}")
+        return None
+    
 def read_yaml_files_from_folder(folder_path):
     yaml_data = {}
     

@@ -1,6 +1,5 @@
 gettestingdataset/Repositories.random-processed.json
-<<<<<<< HEAD
 gettestingdataset/Repositories.repo-tools-history.json
-=======
->>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
+gettestingdataset/travisrepos.json
 gettestingdataset/keys.py
+pyecoreparser/results2.md

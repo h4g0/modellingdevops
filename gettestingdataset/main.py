@@ -11,6 +11,23 @@ from multiprocessing import Pool
 from keys import key,keyhugo2,keyhugo3,keyjacome
 import random
 
+import json
+
+def save_to_json(data, filename):
+    """
+    Save Python object to a JSON file.
+    
+    Args:
+        data: Python object to save (dict, list, etc.)
+        filename (str): Path to save the JSON file
+    """
+    try:
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=4)
+            
+    except Exception as e:
+        print(f"Error saving to JSON: {str(e)}")
+
 def pretty_json(item):
     print(json.dumps(item, indent=2))
 
@@ -74,7 +91,6 @@ def process_repos_keys(myDB,count):
         print(f"sleeping for {sleeping_time} seconds")
 
         time.sleep(sleeping_time)
-<<<<<<< HEAD
 
 def remove_tools(repos):
 
@@ -124,168 +140,26 @@ def get_transitions(repos):
 def main():
     
     ##myDB = DB()
-=======
-        
-def main():
-    
-    myDB = DB()
->>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
 
     ##get_raw_file("MPLew-is/github-api-client","main","Examples/GithubActionsWebhookClient/ReadMe.md")
     ##get_tool_usage_statistics(myDB)
 
-<<<<<<< HEAD
-    f = open('Repositories.repo_tools_history.json')
+    ##f = open('Repositories.entreprise_repos.json',encoding="utf8")
+    #f = open('Repositories.random-processed.json',encoding="utf8")
+    #f = open('travisrepos.json',encoding="utf8")
+
+    ##f = open('Repositories.entreprise_tools_history.json',encoding="utf8")
 
     repos = json.load(f)
-
-    print(pretty_json(repos[0]))
-    print(len(repos))
-    new_repos = get_transitions(remove_tools(repos))
-    print(len(remove_tools(repos)))
-    print(len(new_repos))
-    json_object = json.dumps(new_repos, indent=4)
-    
-    # Writing to sample.json
-    with open("transactions.json", "w") as outfile:
-        outfile.write(json_object)
-    """repos = myDB.get_random_processed_repositories_with_tool(1000,"GitHubActions")
-=======
-   
-
-    ##repos = myDB.get_random_processed_repositories(10000)
-
-    repos = myDB.get_random_processed_repositories_with_tool(1000,"GitHubActions")
->>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
-
-    random.shuffle(repos)
-
-    sample = repos[0:200]
-
-    ga_samples = get_ga_files(sample)
-    
-    print(len(ga_samples))
-    ##print(get_map_tool_tool(repos))
-
-    print(ga_samples[1])
-
-    count = 0
-    for r in ga_samples:
-        try:
-            f = open(f"tests2/test{count}.mydsl11", "w")
-            f.write(r)
-            f.close()
-            count+=1
-        except: 
-            count += 1
-<<<<<<< HEAD
-    repos_filename = [("Agola","\.agola"),
-=======
-    """repos_filename = [("Agola","\.agola"),
->>>>>>> eab672af45a6f2fe7d086f612506ab0553740043
-                    ("AppVeyor","appveyor\.yml"),
-                    ("ArgoCD","argo\-cd"),
-                    ("Bytebase","air\.toml"),
-                    ("Cartographer","cartographer\.yaml"),
-                    ("CircleCI","circleci"),
-                    ("Cloud 66 Skycap","cloud66"),
-                    ("Cloudbees Codeship","codeship\-services\.yml"),
-                    ("Devtron","devtron\-ci\.yaml"),
-                    ("Flipt","flipt\.yml"),
-                    ("GitLab","gitlab\-ci\.yml"),
-                    ("Google Cloud Build","cloudbuild\.yaml"),
-                    ("Helmwave","helmwave\.yml"),
-                    ("Travis","\.travis\.yml"),
-                    ("Jenkins","Jenkinsfile"),
-                    ("JenkinsX","jx\-requirements\.yml"),
-                    ("Keptn","charts\/keptn\/"),
-                    ("Liquibase","liquibase\.properties"),
-                    ("Mergify","mergify"),
-                    ("OctopusDeploy"," \.octopus"),
-                    ("OpenKruise","charts\/kruise\/"),
-                    ("OpsMx","charts\/isdargo\/"),
-                    ("Ortelius","component\.toml"),
-                    ("Screwdriver","screwdriver\.yaml"),
-                    ("Semaphore","\.semaphore\/semaphore\.yaml"),
-                    ("TeamCity","\.teamcity"),
-                    ("werf","werf\.yaml"),
-                    ("Woodpecker CI", "\.woodpecker\.yml"),
-                    ("GitHubActions","github\/workflows")]
-
-    repos_code_yml = [("Codefresh","DaemonSet"),
-                    ("XL Deploy","apiVersion\: \(xl-deploy\|xl\)"),
-                    ("Drone","kind\:"),
-                    ("Flagger","flagger"),
-                    ("Harness.io","featureFlags\:"),
-                    ("Flux","fluxcd"),
-                    ("GoCD","stages\:"),
-                    ("Concourse","resources\:"),
-                    ("Kubernetes","apiVersion\:"),
-                    ("AWS CodePipeline","roleArn"),
-                    ]
-
-
-    repos = []
-
-    repos.extend(repos_filename)
-    repos.extend(repos_code_yml)
+    #repos  = random.choices(repos, k=200)
 
     print(len(repos))
-
-    for i in range(0,len(repos),2):
-        print(f"{repos[i][0]} & {repos[i+1][0]}\\\\")
-        print("\hline")"""
-
-    """f = open('Repositories.random-processed.json',encoding="utf8")
-
-    data = json.load(f)
-
-    count = 0
-
-    for repo in data:
-        tools = len(repo.get("tools_used",[]))
-
-        if(tools > 1):
-            count += 1
+    #mytools = list(filter( lambda x: ("Travis" in x.get("tools_used",[])) and
+    ##                       (len(x.get("tools_used",[])) == 1), repos))
     
-    print(count)"""
-    """data = list(filter(lambda x: len(x["tools_used"]) > 0, data))
-    print(get_language_number_of_tools_distribution(data))"""
-
-    ##print(get_stats_repos_per_tool(repos))    
-    ##get_rate_limit()
-    ##process_repos_keys(myDB,20)
-    """while True:
-        process_repos_keys(myDB,5000)"""
-    ##test_time_per_repo(myDB,1000)
-
-    ##add_multiple_repositories_to_db(myDB,2,10)
-    ##get_tool_usage_statistics(myDB)
-    
-    ##get_repos_data_dates(myDB,"08/04/10","23/10/15")
-
-    """start = time.time()
-
-    rr = get_repos_data_dates(myDB,"12/01/01","16/12/31",10)
-    
-    print( time.time() - start )"""
-    
-    """rr = [x["stargazers_count"]for x in get_all_random_repositories_dates("2023-10-08","2023-10-15")]
-
-    print(rr)
-
-    ur = set()
-
-    for r in rr:
-        ur.add(r)
-
-    print(len(ur))"""
-
-    """start = time.time()
-
-    await process_repositories(myDB)
-
-    print( time.time() - start )"""
+    #save_to_json(repos,"travisrepos.json")
+    ##print(pretty_json(repos[0]))
+    return
 
 
 main()
