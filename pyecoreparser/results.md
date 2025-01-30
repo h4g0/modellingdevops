@@ -1,7 +1,7 @@
 ## GitHub Actions
 
 ### Summary
-- **Failed to parse YAML**: 2 files test110.yml , test86.yml
+-**Failed to parse YAML**: 2 files test110.yml , test86.yml bash and is not github actions
 -**defaults** test99.yml
 -**Succeeded**: 197 files
 

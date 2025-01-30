@@ -67,7 +67,7 @@ def get_multiple_random_repositories(pages, stars):
 def get_raw_file(repo,branch,path):
 
     print(f"https://raw.githubusercontent.com/{repo}/{branch}/{path}")
-    result = extract_repository(f"https://raw.githubusercontent.com/{repo}/{branch}/{path}")
+    result = session.get(f"https://raw.githubusercontent.com/{repo}/{branch}/{path}")
 
     ###print(f"{repo}/{branch}/{path}")
     return result.content.decode("utf-8")
@@ -86,6 +86,8 @@ def decoded_base_64(fileloc):
     return f"{decoded_content}"
 
 def get_repo_tree(owner,repo,branch):
+
+    #print(f"https://api.github.com/repos/{owner}/{repo}/git/trees/{branch}?recursive=1")
 
     result = extract_repository(f"https://api.github.com/repos/{owner}/{repo}/git/trees/{branch}?recursive=1")
 

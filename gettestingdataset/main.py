@@ -1,8 +1,9 @@
+from re import IGNORECASE, search
 import requests 
 import json
 import time
 from requests.structures import CaseInsensitiveDict
-from api import change_token, get_content_repositories, get_multiple_random_repositories, get_rate_limit, get_raw_file
+from api import change_token, get_content_repositories, get_multiple_random_repositories, get_rate_limit, get_raw_file, get_repo_tree
 from db import DB
 from stats import get_cicd_percent_per_year, get_language_number_of_tools_distribution, get_languages_cicd, get_languages_more_than_one_percent, get_map_tool_tool, get_number_of_tools_distribution, get_number_tools_per_year, get_programming_languages, get_programming_languages_all, get_programming_languages_repos, get_stats_repos_per_tool, get_tools_language_cicd, get_tools_more_than_one_percent
 from tools import find_repos_tools, get_all_random_repositories_dates, get_ga_files, get_repos_data_dates, get_total_repos_per_tool
@@ -137,6 +138,60 @@ def get_transitions(repos):
     
     return new_repos
 
+def get_first_file_from_tree(name,tree):
+    for f in tree:
+        fn = f.get("path")
+        if search(name,fn,IGNORECASE):
+            print(fn)
+            return fn
+    return None
+
+def get_first_file(repo):
+
+    tree = get_repo_tree(repo.get("owner",""),repo.get("name",""),repo.get("default_branch","")).get("tree","")
+    
+    #print(tree)
+
+    ff =  get_first_file_from_tree("\.travis\.yml",tree)
+
+    print(ff)
+
+    return ff
+
+def get_and_save_file(repo, fileloc):
+    rf = get_raw_file(repo.get("full_name",""),repo.get("default_branch",""),fileloc)
+    return rf
+
+def save_files_repos(repos,fileloc,max=200):
+    count = 0
+    
+    for repo in repos:
+
+        if count >= max:
+            return
+        
+        ff = get_first_file(repo)
+        if ff != None:
+            contents = get_and_save_file(repo, ff)
+
+            f = open(f"{fileloc}/test{count}.yml", "w")
+            f.write(contents)
+            f.close()
+            
+            count += 1
+        
+        #time.sleep(2)
+def selectntools(repos,tool,location):
+
+    print(len(repos))
+    repos = list(filter( lambda x: (tool in x.get("tools_used",[])) and
+                           (len(x.get("tools_used",[])) == 1), repos))
+    
+    repos  = random.choices(repos, k=500)
+
+    save_to_json(repos,location)
+
+
 def main():
     
     ##myDB = DB()
@@ -146,18 +201,24 @@ def main():
 
     ##f = open('Repositories.entreprise_repos.json',encoding="utf8")
     #f = open('Repositories.random-processed.json',encoding="utf8")
-    #f = open('travisrepos.json',encoding="utf8")
+
+    f = open('travisrepos.json',encoding="utf8")
 
     ##f = open('Repositories.entreprise_tools_history.json',encoding="utf8")
 
     repos = json.load(f)
-    #repos  = random.choices(repos, k=200)
 
     print(len(repos))
-    #mytools = list(filter( lambda x: ("Travis" in x.get("tools_used",[])) and
-    ##                       (len(x.get("tools_used",[])) == 1), repos))
-    
-    #save_to_json(repos,"travisrepos.json")
+
+    save_files_repos(repos, "testtravis",  200)
+    #selectntools(repos, "Travis", "travisrepos.json")
+
+    #save_files_repos(repos,"testtravis",10)
+    ##print(repos[1])
+
+   
+
+   
     ##print(pretty_json(repos[0]))
     return
 
