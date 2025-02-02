@@ -52,3 +52,13 @@ def pretty_print_yaml(data):
     
     # Pretty-print the YAML content
     print(yaml.dump(data, sort_keys=False, default_flow_style=False, indent=4))
+
+
+def get_yamls_keys(yaml_data):
+    all_keys = set()
+    print(len(yaml_data))
+    for f in yaml_data:
+        all_keys.update(list(f[1].keys()))
+
+    print(len(all_keys))
+    return all_keys
